@@ -2,334 +2,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>World Championship for Space Models 2027</title>
-
-  <style>
-    :root {
-      --navy: #102b49;
-      --navy-dark: #0b2038;
-      --blue: #315b80;
-      --white: #ffffff;
-      --light: #f3f5f7;
-      --text: #172b3d;
-      --muted: #5d6c7a;
-      --border: #dce2e8;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--text);
-      background: var(--light);
-    }
-
-    /* Górny pasek */
-
-    header {
-      min-height: 88px;
-      padding: 14px 4%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      background: var(--navy-dark);
-      border-bottom: 4px solid var(--blue);
-      flex-wrap: wrap;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: var(--white);
-      text-decoration: none;
-      flex-shrink: 0;
-    }
-
-    .brand img {
-      width: 50px;
-      height: 50px;
-      object-fit: contain;
-    }
-
-    .brand-name {
-      font-size: 20px;
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
-
-    .brand-year {
-      color: #b9d0e5;
-      font-weight: 400;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 19px;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      padding: 8px 0;
-      color: #e0e8f0;
-      text-decoration: none;
-      font-size: 13px;
-      transition: color 0.2s;
-    }
-
-    nav a:hover,
-    nav a.active {
-      color: #a9c9e6;
-      border-bottom: 2px solid #a9c9e6;
-    }
-
-    .language {
-      display: flex;
-      gap: 5px;
-      flex-shrink: 0;
-    }
-
-    .language button {
-      padding: 7px 9px;
-      color: #e0e8f0;
-      background: transparent;
-      border: 1px solid #63778c;
-      border-radius: 3px;
-      cursor: pointer;
-      font-size: 12px;
-    }
-
-    .language button.active,
-    .language button:hover {
-      color: var(--navy-dark);
-      background: var(--white);
-      border-color: var(--white);
-    }
-
-    /* Główne zdjęcie i jasny panel */
-
-    .hero {
-      min-height: 690px;
-      padding: 65px 5%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-
-      background-image:
-        linear-gradient(
-          rgba(10, 28, 47, 0.35),
-          rgba(10, 28, 47, 0.35)
-        ),
-        url("tlohome.jpg");
-
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-    }
-
-    .hero-panel {
-      width: min(900px, 100%);
-      padding: 65px 55px;
-      text-align: center;
-      background: rgba(255, 255, 255, 0.96);
-      border-top: 6px solid var(--navy);
-      box-shadow: 0 8px 35px rgba(0, 0, 0, 0.18);
-    }
-
-    .event-label {
-      margin: 0 0 22px;
-      color: var(--blue);
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      line-height: 1.7;
-      text-transform: uppercase;
-    }
-
-    h1 {
-      max-width: 780px;
-      margin: 0 auto;
-      color: var(--navy);
-      font-size: clamp(34px, 5vw, 60px);
-      font-weight: 700;
-      line-height: 1.12;
-    }
-
-    .title-divider {
-      width: 75px;
-      height: 3px;
-      margin: 28px auto;
-      background: var(--blue);
-    }
-
-    .event-date {
-      margin: 0;
-      color: var(--muted);
-      font-size: 18px;
-      letter-spacing: 1px;
-    }
-
-    /* Stopka */
-
-    footer {
-      padding: 23px 5%;
-      color: #d5dee7;
-      background: var(--navy-dark);
-      text-align: center;
-      font-size: 12px;
-    }
-
-    /* Urządzenia mobilne */
-
-    @media (max-width: 1100px) {
-      header {
-        justify-content: center;
-      }
-
-      nav {
-        order: 3;
-        width: 100%;
-        gap: 16px;
-      }
-    }
-
-    @media (max-width: 600px) {
-      header {
-        padding: 15px 4%;
-        gap: 15px;
-      }
-
-      nav {
-        gap: 8px 14px;
-      }
-
-      nav a {
-        font-size: 12px;
-      }
-
-      .hero {
-        min-height: 580px;
-        padding: 35px 5%;
-      }
-
-      .hero-panel {
-        padding: 45px 22px;
-      }
-
-      .event-label {
-        font-size: 11px;
-        letter-spacing: 1.5px;
-      }
-
-      h1 {
-        font-size: clamp(32px, 8vw, 44px);
-      }
-
-      .event-date {
-        font-size: 16px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>World Championship for Space Models 2027</title>
+<meta name="description" content="Official website of the 2027 World Championship for Space Models.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+:root{--navy:#101d35;--red:#d92f40;--text:#19263b;--muted:#6c788b;--bg:#f5f7fb;--shadow:0 12px 40px rgba(20,37,65,.08);--radius:24px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.65}a{text-decoration:none;color:inherit}.container{width:min(1160px,90%);margin:auto}
+header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);border-bottom:1px solid #e9edf4}.nav{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;align-items:center;gap:12px;flex-shrink:0}.brand img{width:48px;height:48px;object-fit:contain}.brand strong{display:block;font:800 17px Manrope,sans-serif}.brand small{display:block;font-size:9px;color:var(--muted);letter-spacing:1px;font-weight:700}
+.nav-links{display:flex;align-items:center;justify-content:center;gap:3px;flex-wrap:wrap}.nav-links a{padding:9px 10px;border-radius:12px;font-size:13px;font-weight:600;color:#536176;transition:.2s}.nav-links a:hover,.nav-links a.active{background:#edf1f8;color:var(--navy)}.lang{border:0;background:var(--navy);color:white;padding:10px 14px;border-radius:12px;font-weight:700;cursor:pointer}.menu-toggle{display:none;border:0;background:#edf1f8;border-radius:12px;padding:10px 13px;font-size:20px;cursor:pointer}
+.hero{position:relative;overflow:hidden;background:var(--navy);color:white;border-radius:0 0 30px 30px;min-height:570px;display:flex;align-items:center}.hero-bg{position:absolute;inset:0;background:linear-gradient(90deg,rgba(9,19,37,.88),rgba(9,19,37,.60),rgba(9,19,37,.24)),url('tlohome.jpg') center 48%/cover no-repeat}.hero-content{position:relative;z-index:1;padding:80px 0;max-width:850px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;color:#ff9da7;font-size:12px;letter-spacing:2px;font-weight:800;text-transform:uppercase}.eyebrow:before{content:'';width:28px;height:3px;background:var(--red);border-radius:3px}
+h1,h2,h3{font-family:'Manrope',sans-serif;line-height:1.15}h1{font-size:clamp(38px,6vw,70px);letter-spacing:-2px;margin:22px 0}h1 span{color:#ff6474}.hero .date{font-size:22px;font-weight:700;color:#fff;margin-top:22px}
+.section{padding:70px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:30px}.section-head h2{font-size:clamp(28px,4vw,40px);letter-spacing:-1px;margin:10px 0}.section-head p{color:var(--muted);max-width:500px;margin:0}.kicker{color:var(--red);font-size:12px;letter-spacing:1.8px;font-weight:800;text-transform:uppercase}
+.info-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:22px}.feature{background:white;border-radius:var(--radius);padding:34px;box-shadow:var(--shadow)}.feature h3{font-size:25px;margin:10px 0}.feature p{color:var(--muted)}.feature-dark{background:var(--navy);color:white}.feature-dark p{color:#d1daea}.feature-icon{width:52px;height:52px;border-radius:17px;background:#edf1f8;display:grid;place-items:center;font-size:24px}.feature-dark .feature-icon{background:#2a3b57}.text-link{display:inline-flex;gap:8px;align-items:center;font-weight:700;color:var(--red);margin-top:12px}.pill{display:inline-block;background:#eef1f7;border-radius:30px;padding:7px 12px;font-size:12px;font-weight:700;color:#536176}
+footer{background:#0b1528;color:white;margin-top:35px;padding:35px 0 22px}.footer-top{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;padding-bottom:22px}footer p,footer a{color:#bac6d9;font-size:14px}.footer-links{display:flex;gap:18px;flex-wrap:wrap}.footer-bottom{border-top:1px solid #29364b;padding-top:18px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;color:#9ba9bf;font-size:12px}
+@media(max-width:1050px){.nav{flex-wrap:wrap;padding:14px 0}.menu-toggle{display:block;margin-left:auto}.nav-links{display:none;width:100%;align-items:stretch;flex-direction:column;padding:10px 0}.nav-links.open{display:flex}.nav-links a{padding:12px}.lang{width:100%}.info-grid{grid-template-columns:1fr}}
+@media(max-width:620px){.hero{min-height:480px}.hero-content{padding:55px 0}h1{letter-spacing:-1px}.section{padding:48px 0}.section-head{align-items:flex-start;flex-direction:column}.feature{padding:26px}}
+</style>
 </head>
-
 <body>
+<header><div class="container nav">
+<a href="index.html" class="brand"><img src="images/logo.png" alt="WCHSM logo"><div><strong>WCHSM 2027</strong><small>WORLD CHAMPIONSHIP FOR SPACE MODELS</small></div></a>
+<button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+<nav class="nav-links" id="navLinks">
+<a href="index.html" class="active" data-en="Home" data-pl="Strona główna">Home</a>
+<a href="bulletins.html" data-en="Bulletins" data-pl="Biuletyny">Bulletins</a>
+<a href="general.html" data-en="General" data-pl="Ogólne">General</a>
+<a href="results.html" data-en="Results" data-pl="Wyniki">Results</a>
+<a href="information.html" data-en="Information" data-pl="Informacje">Information</a>
+<a href="registration.html" data-en="Registration" data-pl="Rejestracja">Registration</a>
+<a href="gallery.html" data-en="Photo Gallery" data-pl="Galeria zdjęć">Photo Gallery</a>
+<button class="lang" id="langToggle">PL</button>
+</nav></div></header>
 
-  <header>
-    <a class="brand" href="index.html">
-      <img src="images/logo.png" alt="Championship logo">
-      <span class="brand-name">
-        WCSM <span class="brand-year">2027</span>
-      </span>
-    </a>
+<main>
+<section class="hero"><div class="hero-bg"></div><div class="container"><div class="hero-content">
+<div class="eyebrow" data-en="International space modeling" data-pl="Międzynarodowe zawody modeli kosmicznych">International space modeling</div>
+<h1 data-en="World Championship for <span>Space Models</span>" data-pl="Mistrzostwa Świata <span>Modeli Kosmicznych</span>">World Championship for <span>Space Models</span></h1>
+<p class="date" data-en="xx–xx month 2027" data-pl="xx–xx miesiąc 2027">xx–xx month 2027</p>
+</div></div></section>
 
-    <nav>
-      <a href="index.html" class="active"
-         data-en="Home" data-pl="Strona główna">Home</a>
+<section class="section"><div class="container">
+<div class="section-head"><div><div class="kicker" data-en="Welcome" data-pl="Witamy">Welcome</div><h2 data-en="The road to 2027" data-pl="Droga do 2027 roku">The road to 2027</h2></div>
+<p data-en="Everything you need to know about the championship, in one place." data-pl="Wszystkie najważniejsze informacje o mistrzostwach w jednym miejscu.">Everything you need to know about the championship, in one place.</p></div>
+<div class="info-grid">
+<article class="feature feature-dark"><div class="feature-icon">🌍</div><h3 data-en="One championship. The whole world." data-pl="Jedne mistrzostwa. Cały świat.">One championship. The whole world.</h3><p data-en="Follow official announcements, competition information and updates for teams and competitors." data-pl="Śledź oficjalne komunikaty, informacje o zawodach i aktualności dla ekip oraz zawodników.">Follow official announcements, competition information and updates for teams and competitors.</p><a class="text-link" style="color:#ff8290" href="information.html" data-en="Explore information →" data-pl="Sprawdź informacje →">Explore information →</a></article>
+<article class="feature"><div class="feature-icon">📅</div><div class="kicker" data-en="Event details" data-pl="Szczegóły wydarzenia">Event details</div><h3 data-en="Dates and location" data-pl="Termin i lokalizacja">Dates and location</h3><p data-en="Official event details will be published here when confirmed by the organisers." data-pl="Oficjalne szczegóły wydarzenia zostaną opublikowane po potwierdzeniu przez organizatorów.">Official event details will be published here when confirmed by the organisers.</p><span class="pill" data-en="Details to be announced" data-pl="Szczegóły wkrótce">Details to be announced</span></article>
+</div></div></section>
+</main>
 
-      <a href="bulletins.html"
-         data-en="Bulletins" data-pl="Biuletyny">Bulletins</a>
+<footer><div class="container">
+<div class="footer-top"><div><a href="index.html" class="brand"><img src="images/logo.png" alt=""><div><strong style="color:white">WCHSM 2027</strong><small style="color:#bac6d9">WORLD CHAMPIONSHIP FOR SPACE MODELS</small></div></a><p data-en="Official website of the 2027 World Championship for Space Models." data-pl="Oficjalna strona Mistrzostw Świata Modeli Kosmicznych 2027.">Official website of the 2027 World Championship for Space Models.</p></div>
+<div class="footer-links"><a href="bulletins.html" data-en="Bulletins" data-pl="Biuletyny">Bulletins</a><a href="general.html" data-en="General" data-pl="Ogólne">General</a><a href="information.html" data-en="Information" data-pl="Informacje">Information</a><a href="gallery.html" data-en="Photo Gallery" data-pl="Galeria zdjęć">Photo Gallery</a></div></div>
+<div class="footer-bottom"><span>© 2027 World Championship for Space Models</span><span data-en="Official championship website" data-pl="Oficjalna strona mistrzostw">Official championship website</span></div>
+</div></footer>
 
-      <a href="general.html"
-         data-en="General" data-pl="Ogólne">General</a>
-
-      <a href="results.html"
-         data-en="Results" data-pl="Wyniki">Results</a>
-
-      <a href="information.html"
-         data-en="Information" data-pl="Informacje">Information</a>
-
-      <a href="registration.html"
-         data-en="Registration" data-pl="Rejestracja">Registration</a>
-
-      <a href="gallery.html"
-         data-en="Photo Gallery" data-pl="Galeria zdjęć">Photo Gallery</a>
-    </nav>
-
-    <div class="language">
-      <button type="button" id="enBtn" onclick="setLanguage('en')">EN</button>
-      <button type="button" id="plBtn" onclick="setLanguage('pl')">PL</button>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="hero-panel">
-
-        <p class="event-label"
-           data-en="Official Championship · 2027"
-           data-pl="Oficjalne Mistrzostwa · 2027">
-          Official Championship · 2027
-        </p>
-
-        <h1
-          data-en="World Championship for Space Models"
-          data-pl="Mistrzostwa Świata Modeli Kosmicznych">
-          World Championship for Space Models
-        </h1>
-
-        <div class="title-divider"></div>
-
-        <p class="event-date"
-           data-en="xx–xx month 2027"
-           data-pl="xx–xx miesiąc 2027">
-          xx–xx month 2027
-        </p>
-
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    © 2027 World Championship for Space Models
-  </footer>
-
-  <script>
-    function setLanguage(lang) {
-      document.documentElement.lang = lang;
-      localStorage.setItem('wcsm-language', lang);
-
-      document.querySelectorAll('[data-en][data-pl]').forEach(element => {
-        element.textContent = element.dataset[lang];
-      });
-
-      document.getElementById('enBtn')
-        .classList.toggle('active', lang === 'en');
-
-      document.getElementById('plBtn')
-        .classList.toggle('active', lang === 'pl');
-    }
-
-    setLanguage(localStorage.getItem('wcsm-language') || 'en');
-  </script>
-
+<script>
+const navLinks=document.getElementById('navLinks');
+document.getElementById('menuToggle').addEventListener('click',()=>navLinks.classList.toggle('open'));
+const langToggle=document.getElementById('langToggle');
+function setLanguage(lang){document.documentElement.lang=lang;document.querySelectorAll('[data-en][data-pl]').forEach(el=>el.innerHTML=el.getAttribute('data-'+lang));langToggle.textContent=lang==='en'?'PL':'EN';localStorage.setItem('wchsm-language',lang)}
+langToggle.addEventListener('click',()=>setLanguage((document.documentElement.lang||'en')==='en'?'pl':'en'));
+setLanguage(localStorage.getItem('wchsm-language')||'en');
+</script>
 </body>
 </html>
