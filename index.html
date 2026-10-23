@@ -4,63 +4,667 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#07172e">
+<meta name="description" content="Official website of the World Championship for Space Models 2027.">
 <title>World Championship for Space Models 2027</title>
+
 <style>
-*{box-sizing:border-box}
-:root{--bg:#102B4E;--panel:#17385F;--panel2:#214B79;--gold:#E8B96D;--text:#F4F7FC;--muted:#CAD8E8;--border:rgba(255,255,255,.13)}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
-header{padding:18px 5%;background:#0B203B;border-bottom:1px solid var(--border)}
-.header-top{display:flex;align-items:center;justify-content:space-between}
-.logo{width:76px;height:76px;object-fit:contain}
-.language{border:1px solid var(--border);background:var(--panel2);color:white;border-radius:12px;padding:11px 16px;cursor:pointer;font-weight:bold}
-nav{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:7px;margin-top:20px}
-nav a{color:var(--muted);text-decoration:none;padding:11px 14px;border-radius:10px;font-size:14px;transition:.2s}
-nav a:hover,nav a.active{color:var(--gold);background:var(--panel2)}
-main{max-width:1200px;margin:auto;padding:55px 24px 85px}
-.hero{min-height:490px;padding:55px 25px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border:1px solid var(--border);border-radius:28px;background:radial-gradient(ellipse at top right,rgba(232,185,109,.12),transparent 45%),linear-gradient(135deg,#17385F,#102B4E 70%);box-shadow:0 20px 55px rgba(0,0,0,.18)}
-.eyebrow{color:var(--gold);font-size:13px;letter-spacing:3px;text-transform:uppercase;font-weight:bold;margin-bottom:24px}
-h1{font-size:clamp(38px,6vw,76px);line-height:1.08;letter-spacing:-2px;margin:0;max-width:950px}
-.date{font-size:clamp(18px,2.2vw,24px);color:var(--muted);margin-top:28px}
-.gold-line{width:75px;height:3px;background:var(--gold);border-radius:10px;margin-top:28px}
-footer{text-align:center;color:var(--muted);padding:25px;font-size:13px;border-top:1px solid var(--border)}
-@media(max-width:700px){header{padding:14px 4%}.logo{width:58px;height:58px}nav{gap:4px;margin-top:14px}nav a{padding:9px 10px;font-size:13px}main{padding:30px 14px 55px}.hero{min-height:390px;border-radius:22px}h1{letter-spacing:-1px}}
+:root {
+  --navy: #07172e;
+  --navy-light: #10294b;
+  --blue: #2459a6;
+  --sky: #83d4ff;
+  --white: #f7faff;
+  --muted: #b7c9df;
+  --line: rgba(255,255,255,.16);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--navy);
+  color: var(--white);
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+.site-header {
+  height: 86px;
+  padding: 0 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  background: rgba(5, 18, 39, .96);
+  border-bottom: 1px solid var(--line);
+  position: relative;
+  z-index: 5;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.brand img {
+  width: 66px;
+  height: 66px;
+  object-fit: contain;
+}
+
+.brand-text {
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  line-height: 1.15;
+}
+
+.brand-text span {
+  display: block;
+  color: var(--sky);
+  font-size: 13px;
+  letter-spacing: 3px;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(15px, 2.3vw, 35px);
+}
+
+.main-nav a {
+  position: relative;
+  padding: 12px 0;
+  color: #d7e4f4;
+  font-size: 13px;
+  white-space: nowrap;
+  transition: color .2s;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  color: var(--sky);
+}
+
+.main-nav a.active::after {
+  content: "";
+  height: 3px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--sky);
+  border-radius: 4px;
+}
+
+.language-button {
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  padding: 10px 13px;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 13px;
+}
+
+.language-button:hover {
+  background: rgba(255,255,255,.08);
+}
+
+.hero {
+  min-height: 470px;
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #102b50;
+}
+
+.hero-image {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 45%;
+}
+
+/* Readable overlay while keeping the rocket image visible */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(90deg,
+      rgba(5,19,42,.97) 0%,
+      rgba(7,27,58,.88) 33%,
+      rgba(8,32,67,.42) 62%,
+      rgba(8,32,67,.06) 100%),
+    linear-gradient(0deg, rgba(5,19,42,.4), transparent 35%);
+}
+
+.hero-content {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 70px 6% 80px;
+}
+
+.eyebrow {
+  color: var(--sky);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  max-width: 780px;
+  font-size: clamp(42px, 6vw, 78px);
+  line-height: .98;
+  letter-spacing: -2.5px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.hero h1 span {
+  display: block;
+  color: var(--sky);
+}
+
+.hero-date {
+  margin-top: 24px;
+  color: #c1eaff;
+  font-size: clamp(16px, 2vw, 22px);
+  letter-spacing: 4px;
+  font-weight: 700;
+}
+
+.event-strip {
+  min-height: 92px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 20px 5%;
+  background: #0b2140;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.event-detail {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  min-width: 210px;
+}
+
+.detail-icon {
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(131,212,255,.45);
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  color: var(--sky);
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.detail-text strong {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+.detail-text small {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.event-divider {
+  height: 40px;
+  width: 1px;
+  background: var(--line);
+}
+
+.event-cta {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  background: var(--sky);
+  color: #07172e;
+  font-weight: 800;
+  font-size: 12px;
+  padding: 17px 21px;
+  border-radius: 6px;
+  transition: background .2s, transform .2s;
+}
+
+.event-cta:hover {
+  background: white;
+  transform: translateY(-2px);
+}
+
+.event-cta span {
+  font-size: 20px;
+}
+
+.quick-links {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 35px 5% 60px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.quick-card {
+  min-height: 145px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 25px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: linear-gradient(135deg, #112d52, #0b2140);
+  transition: transform .2s, border-color .2s, background .2s;
+}
+
+.quick-card::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 180px;
+  right: -48px;
+  top: -20px;
+  transform: rotate(25deg);
+  background: rgba(76,148,229,.12);
+}
+
+.quick-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(131,212,255,.65);
+  background: linear-gradient(135deg, #183c6b, #10294b);
+}
+
+.card-icon {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: rgba(131,212,255,.12);
+  color: var(--sky);
+  font-size: 26px;
+}
+
+.card-copy {
+  flex: 1;
+  min-width: 0;
+}
+
+.card-copy h2 {
+  font-size: 17px;
+  margin-bottom: 8px;
+}
+
+.card-copy p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.card-arrow {
+  color: var(--sky);
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.site-footer {
+  padding: 24px 5%;
+  border-top: 1px solid var(--line);
+  color: #91a8c5;
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+/* Tablet and mobile */
+@media (max-width: 1050px) {
+  .site-header {
+    height: auto;
+    min-height: 80px;
+    padding: 12px 4%;
+    flex-wrap: wrap;
+  }
+
+  .main-nav {
+    order: 3;
+    width: 100%;
+    justify-content: flex-start;
+    overflow-x: auto;
+    gap: 23px;
+  }
+
+  .main-nav a {
+    font-size: 12px;
+  }
+
+  .hero {
+    min-height: 430px;
+  }
+
+  .event-strip {
+    flex-wrap: wrap;
+  }
+
+  .event-cta {
+    margin-left: 0;
+  }
+
+  .quick-links {
+    grid-template-columns: 1fr;
+  }
+
+  .quick-card {
+    min-height: 115px;
+  }
+}
+
+@media (max-width: 600px) {
+  .brand img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .brand-text {
+    font-size: 14px;
+  }
+
+  .language-button {
+    padding: 9px 10px;
+  }
+
+  .hero {
+    min-height: 420px;
+    align-items: flex-end;
+  }
+
+  .hero-image {
+    object-position: 62% center;
+  }
+
+  .hero::before {
+    background: linear-gradient(
+      0deg,
+      rgba(5,19,42,.98) 0%,
+      rgba(5,19,42,.82) 45%,
+      rgba(5,19,42,.10) 100%
+    );
+  }
+
+  .hero-content {
+    padding: 50px 6% 45px;
+  }
+
+  .eyebrow {
+    letter-spacing: 2.5px;
+    line-height: 1.7;
+  }
+
+  .hero h1 {
+    font-size: clamp(37px, 10vw, 55px);
+    letter-spacing: -1.5px;
+  }
+
+  .hero-date {
+    font-size: 15px;
+    letter-spacing: 2px;
+  }
+
+  .event-strip {
+    align-items: stretch;
+    gap: 18px;
+    padding: 22px 6%;
+  }
+
+  .event-detail {
+    min-width: 100%;
+  }
+
+  .event-divider {
+    display: none;
+  }
+
+  .event-cta {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .quick-links {
+    padding: 24px 5% 38px;
+    gap: 12px;
+  }
+
+  .quick-card {
+    padding: 18px;
+    gap: 13px;
+  }
+
+  .card-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 22px;
+  }
+
+  .card-copy h2 {
+    font-size: 15px;
+  }
+
+  .site-footer {
+    flex-direction: column;
+    line-height: 1.6;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
 </style>
 </head>
+
 <body>
-<header>
-  <div class="header-top">
-    <a href="index.html"><img class="logo" src="images/logo.png" alt="Championship logo"></a>
-    <button class="language" id="languageButton">🇵🇱 Polski</button>
-  </div>
-  <nav>
-    <a class="active" href="index.html" data-en="Home" data-pl="Strona główna">Home</a>
+
+<header class="site-header">
+  <a class="brand" href="index.html" aria-label="World Championship for Space Models 2027">
+    <img src="images/logo.png" alt="Championship logo">
+    <div class="brand-text">WCSM<span>2027</span></div>
+  </a>
+
+  <nav class="main-nav" aria-label="Main navigation">
+    <a href="index.html" class="active" data-en="Home" data-pl="Strona główna">Home</a>
     <a href="bulletins.html" data-en="Bulletins" data-pl="Biuletyny">Bulletins</a>
     <a href="general.html" data-en="General" data-pl="Ogólne">General</a>
     <a href="results.html" data-en="Results" data-pl="Wyniki">Results</a>
-    <a href="information.html" data-en="Information" data-pl="Informacje">Information</a>
     <a href="registration.html" data-en="Registration" data-pl="Rejestracja">Registration</a>
+    <a href="information.html" data-en="Information" data-pl="Informacje">Information</a>
     <a href="gallery.html" data-en="Photo Gallery" data-pl="Galeria zdjęć">Photo Gallery</a>
   </nav>
+
+  <button class="language-button" id="languageButton" type="button" aria-label="Change language">
+    🇵🇱 Polski
+  </button>
 </header>
+
 <main>
   <section class="hero">
-    <div class="eyebrow" data-en="International Model Rocketry" data-pl="Międzynarodowe modelarstwo rakietowe">International Model Rocketry</div>
-    <h1 data-en="World Championship for Space Models" data-pl="Mistrzostwa Świata Modeli Kosmicznych">World Championship for Space Models</h1>
-    <div class="date" data-en="xx-xx month 2027" data-pl="xx-xx miesiąc 2027">xx-xx month 2027</div>
-    <div class="gold-line"></div>
+    <!-- Replace this image URL with your own rocket photo if desired -->
+    <img
+      class="hero-image"
+      src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=2200&q=85"
+      alt=""
+      fetchpriority="high"
+    >
+
+    <div class="hero-content">
+      <p class="eyebrow"
+         data-en="The world's best in space modeling"
+         data-pl="Najlepsi modelarze kosmiczni świata">
+        The world's best in space modeling
+      </p>
+
+      <h1>
+        <span data-en="World Championship" data-pl="Mistrzostwa Świata">World Championship</span>
+        <span data-en="for Space Models" data-pl="Modeli Kosmicznych">for Space Models</span>
+        <span>2027</span>
+      </h1>
+
+      <p class="hero-date"
+         data-en="XX–XX MONTH 2027"
+         data-pl="XX–XX MIESIĄC 2027">
+        XX–XX MONTH 2027
+      </p>
+    </div>
+  </section>
+
+  <section class="event-strip" aria-label="Event details">
+    <div class="event-detail">
+      <div class="detail-icon" aria-hidden="true">▦</div>
+      <div class="detail-text">
+        <strong data-en="XX–XX MONTH 2027" data-pl="XX–XX MIESIĄC 2027">XX–XX MONTH 2027</strong>
+        <small data-en="Competition dates" data-pl="Termin zawodów">Competition dates</small>
+      </div>
+    </div>
+
+    <div class="event-divider"></div>
+
+    <div class="event-detail">
+      <div class="detail-icon" aria-hidden="true">⌖</div>
+      <div class="detail-text">
+        <strong data-en="Location to be announced" data-pl="Lokalizacja do ogłoszenia">Location to be announced</strong>
+        <small data-en="Competition venue" data-pl="Miejsce zawodów">Competition venue</small>
+      </div>
+    </div>
+
+    <a class="event-cta" href="information.html">
+      <span data-en="EXPLORE THE CHAMPIONSHIP" data-pl="POZNAJ MISTRZOSTWA">EXPLORE THE CHAMPIONSHIP</span>
+      <span aria-hidden="true">→</span>
+    </a>
+  </section>
+
+  <section class="quick-links" aria-label="Explore the championship">
+    <a class="quick-card" href="bulletins.html">
+      <div class="card-icon" aria-hidden="true">▤</div>
+      <div class="card-copy">
+        <h2 data-en="Bulletins" data-pl="Biuletyny">Bulletins</h2>
+        <p data-en="Official documents and announcements"
+           data-pl="Oficjalne dokumenty i komunikaty">
+          Official documents and announcements
+        </p>
+      </div>
+      <span class="card-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a class="quick-card" href="information.html">
+      <div class="card-icon" aria-hidden="true">◎</div>
+      <div class="card-copy">
+        <h2 data-en="Competition Information" data-pl="Informacje o zawodach">Competition Information</h2>
+        <p data-en="Everything you need to know"
+           data-pl="Wszystko, co musisz wiedzieć">
+          Everything you need to know
+        </p>
+      </div>
+      <span class="card-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a class="quick-card" href="results.html">
+      <div class="card-icon" aria-hidden="true">♜</div>
+      <div class="card-copy">
+        <h2 data-en="Results" data-pl="Wyniki">Results</h2>
+        <p data-en="Follow the competition results"
+           data-pl="Śledź wyniki rywalizacji">
+          Follow the competition results
+        </p>
+      </div>
+      <span class="card-arrow" aria-hidden="true">→</span>
+    </a>
   </section>
 </main>
-<footer>World Championship for Space Models 2027</footer>
+
+<footer class="site-footer">
+  <span>© 2027 World Championship for Space Models</span>
+  <span data-en="Official championship website"
+        data-pl="Oficjalna strona mistrzostw">
+    Official championship website
+  </span>
+</footer>
+
 <script>
-const languageButton=document.getElementById("languageButton");
-let currentLanguage=localStorage.getItem("wcsm-language")||"en";
-function setLanguage(language){
- currentLanguage=language;localStorage.setItem("wcsm-language",language);document.documentElement.lang=language;
- document.querySelectorAll("[data-en]").forEach(el=>el.textContent=el.dataset[language]);
- languageButton.textContent=language==="en"?"🇵🇱 Polski":"🇬🇧 English";
+const languageButton = document.getElementById("languageButton");
+let currentLanguage = localStorage.getItem("wcsm-language") || "en";
+
+function setLanguage(language) {
+  currentLanguage = language;
+  document.documentElement.lang = language;
+
+  document.querySelectorAll("[data-en][data-pl]").forEach(element => {
+    element.textContent = element.dataset[language];
+  });
+
+  languageButton.textContent =
+    language === "en" ? "🇵🇱 Polski" : "🇬🇧 English";
+
+  languageButton.setAttribute(
+    "aria-label",
+    language === "en" ? "Switch to Polish" : "Przełącz na angielski"
+  );
+
+  try {
+    localStorage.setItem("wcsm-language", language);
+  } catch (error) {
+    // Language switching still works if local storage is unavailable.
+  }
 }
-languageButton.addEventListener("click",()=>setLanguage(currentLanguage==="en"?"pl":"en"));
+
+languageButton.addEventListener("click", () => {
+  setLanguage(currentLanguage === "en" ? "pl" : "en");
+});
+
 setLanguage(currentLanguage);
 </script>
+
 </body>
 </html>
