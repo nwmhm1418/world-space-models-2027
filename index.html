@@ -1,99 +1,132 @@
+
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Snake JS</title>
-  <style>
-    body {
-      background: #111;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-    canvas {
-      background: #000;
-      border: 2px solid #0f0;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WCSM 2027 | World Championship Space Models</title>
+<style>
+:root{--navy:#07152c;--blue:#102c50;--red:#e63946;--light:#f3f6fa;--text:#17263b}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--text);line-height:1.6}
+a{text-decoration:none;color:inherit}
+header{background:var(--navy);color:white;padding:18px 6%;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.logo{font-size:21px;font-weight:900;letter-spacing:1px}.logo span{color:var(--red)}
+nav{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+nav a{font-size:13px;color:#dbe5f2;font-weight:bold}
+nav a:hover,nav a.active{color:white;border-bottom:2px solid var(--red)}
+button{cursor:pointer}
+.lang button{border:1px solid #60728a;background:transparent;color:white;padding:7px 10px}
+.lang button.active{background:var(--red);border-color:var(--red)}
+.hero{background:radial-gradient(circle at 78% 45%,#204d77,var(--blue) 35%,var(--navy) 75%);color:white;padding:75px 8%;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:30px;overflow:hidden}
+.eyebrow{color:var(--red);font-size:12px;font-weight:bold;letter-spacing:3px}
+h1{font-size:clamp(40px,6vw,76px);line-height:1.02;margin:18px 0;letter-spacing:-2px}
+h1 span{color:var(--red)}
+.hero p{max-width:560px;color:#d5dfed}
+.buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+.btn{display:inline-block;padding:13px 20px;font-weight:bold;font-size:13px;background:var(--red);color:white;border:1px solid var(--red)}
+.btn.outline{background:transparent;border-color:#a7b8ce}
+.btn:hover{filter:brightness(1.1)}
+.rocket-art{height:300px;position:relative;display:grid;place-items:center}
+.planet{position:absolute;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle at 30% 25%,#7199bb,#1a3c60 65%,#07152c);box-shadow:0 0 65px #6394c044}
+.orbit{position:absolute;width:310px;height:140px;border:1px solid #8caac7;border-radius:50%;transform:rotate(-28deg)}
+.rocket{position:relative;width:42px;height:145px;background:linear-gradient(90deg,#c6d2df,white,#b4c2d2);border-radius:50% 50% 12% 12%;transform:rotate(32deg);z-index:2}
+.rocket:before{content:"";position:absolute;top:-35px;left:0;border-left:21px solid transparent;border-right:21px solid transparent;border-bottom:37px solid var(--red)}
+.rocket:after{content:"";position:absolute;bottom:-35px;left:10px;width:22px;height:40px;background:linear-gradient(#ffdb78,#ff603c,transparent);clip-path:polygon(0 0,100% 0,75% 100%,50% 70%,25% 100%)}
+.window{position:absolute;top:25px;left:12px;width:18px;height:18px;border-radius:50%;background:#183e60;border:3px solid #d5e0ec}
+.stripe{position:absolute;top:65px;width:100%;height:12px;background:var(--red)}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);padding:25px 8%;gap:25px;border-bottom:1px solid #dce3ec}
+.fact{border-right:1px solid #dce3ec;padding-right:15px}
+.fact:last-child{border:0}.fact small{display:block;color:#738197;font-weight:bold;letter-spacing:2px}.fact strong{font-size:17px}
+section.content{padding:65px 8%}
+.intro{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+h2{font-size:clamp(28px,4vw,42px);line-height:1.1;margin:10px 0 20px}
+.muted{color:#64748b}
+.cards{background:var(--light);padding:60px 8%}
+.card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:white;padding:25px;border:1px solid #e0e6ee;transition:.2s}
+.card:hover{transform:translateY(-4px);border-color:#aab8c9}
+.card small{color:var(--red);font-weight:bold;letter-spacing:1px}
+.card h3{font-size:22px;margin-bottom:8px}
+.card p{font-size:14px;color:#64748b}
+.arrow{color:var(--red);font-size:22px}
+.cta{background:var(--red);color:white;padding:35px 8%;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.cta h2{margin:0}.cta .btn{background:white;color:var(--navy);border-color:white}
+footer{background:#050e1e;color:#cbd5e1;padding:28px 8%;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:12px}
+@media(max-width:900px){header{align-items:flex-start}nav{order:3;width:100%;gap:13px}.hero{grid-template-columns:1fr;padding:55px 7%}.rocket-art{height:240px}.intro{grid-template-columns:1fr}.card-grid{grid-template-columns:1fr}.facts{padding:20px 7%;grid-template-columns:1fr}.fact{border-right:0;border-bottom:1px solid #dce3ec;padding:10px 0}.fact:last-child{border:0}}
+</style>
 </head>
 <body>
+<header>
+<a class="logo" href="index.html">WCSM <span>2027</span></a>
+<nav id="nav"></nav>
+<div class="lang"><button data-lang="en" class="active">EN</button><button data-lang="pl">PL</button></div>
+</header>
 
-<canvas id="game" width="400" height="400"></canvas>
+<main>
+<section class="hero">
+<div>
+<div class="eyebrow" data-en="INTERNATIONAL SPACE MODELLING" data-pl="MIĘDZYNARODOWE MODELARSTWO KOSMICZNE">INTERNATIONAL SPACE MODELLING</div>
+<h1 data-en="WORLD CHAMPIONSHIP<br>SPACE MODELS <span>2027</span>" data-pl="MISTRZOSTWA ŚWIATA<br>MODELI KOSMICZNYCH <span>2027</span>">WORLD CHAMPIONSHIP<br>SPACE MODELS <span>2027</span></h1>
+<p data-en="Precision, engineering and competition — bringing the world's space model athletes together." data-pl="Precyzja, inżynieria i rywalizacja — spotkanie modelarzy kosmicznych z całego świata.">Precision, engineering and competition — bringing the world's space model athletes together.</p>
+<div class="buttons"><a class="btn" href="information.html" data-en="Event information" data-pl="Informacje o zawodach">Event information</a><a class="btn outline" href="registration.html" data-en="Registration" data-pl="Rejestracja">Registration</a></div>
+</div>
+<div class="rocket-art" aria-label="Decorative rocket illustration"><div class="planet"></div><div class="orbit"></div><div class="rocket"><div class="window"></div><div class="stripe"></div></div></div>
+</section>
+
+<div class="facts">
+<div class="fact"><small data-en="DATES" data-pl="TERMIN">DATES</small><strong data-en="To be announced" data-pl="Do ogłoszenia">To be announced</strong></div>
+<div class="fact"><small data-en="LOCATION" data-pl="MIEJSCE">LOCATION</small><strong data-en="To be announced" data-pl="Do ogłoszenia">To be announced</strong></div>
+<div class="fact"><small data-en="REGISTRATION" data-pl="REJESTRACJA">REGISTRATION</small><strong data-en="Details coming soon" data-pl="Szczegóły wkrótce">Details coming soon</strong></div>
+</div>
+
+<section class="content intro">
+<div><div class="eyebrow" data-en="THE EVENT" data-pl="WYDARZENIE">THE EVENT</div><h2 data-en="Where science meets the sky." data-pl="Gdzie nauka spotyka niebo.">Where science meets the sky.</h2></div>
+<div><p class="muted" data-en="The World Championship Space Models 2027 will bring together competitors, teams and officials for an international celebration of model rocketry. Confirmed details will be published on this website." data-pl="Mistrzostwa Świata Modeli Kosmicznych 2027 zgromadzą zawodników, reprezentacje i sędziów podczas międzynarodowego święta modelarstwa kosmicznego. Potwierdzone informacje będą publikowane na tej stronie.">The World Championship Space Models 2027 will bring together competitors, teams and officials for an international celebration of model rocketry. Confirmed details will be published on this website.</p><a href="information.html" class="arrow" data-en="Explore event information ↗" data-pl="Zobacz informacje o zawodach ↗">Explore event information ↗</a></div>
+</section>
+
+<section class="cards">
+<div class="eyebrow" data-en="STAY UP TO DATE" data-pl="BĄDŹ NA BIEŻĄCO">STAY UP TO DATE</div>
+<h2 data-en="Championship hub" data-pl="Centrum mistrzostw">Championship hub</h2>
+<div class="card-grid">
+<a class="card" href="bulletins.html"><small>01 / NEWS</small><h3 data-en="Official bulletins" data-pl="Komunikaty">Official bulletins</h3><p data-en="Announcements and important event updates." data-pl="Ogłoszenia i ważne aktualizacje dotyczące zawodów.">Announcements and important event updates.</p><span class="arrow">↗</span></a>
+<a class="card" href="competitors.html"><small>02 / TEAMS</small><h3 data-en="Competitors" data-pl="Zawodnicy">Competitors</h3><p data-en="Information about teams and competitors." data-pl="Informacje o reprezentacjach i zawodnikach.">Information about teams and competitors.</p><span class="arrow">↗</span></a>
+<a class="card" href="results.html"><small>03 / SCORES</small><h3 data-en="Results" data-pl="Wyniki">Results</h3><p data-en="Official standings during the competition." data-pl="Oficjalne wyniki publikowane podczas zawodów.">Official standings during the competition.</p><span class="arrow">↗</span></a>
+</div>
+</section>
+
+<section class="cta"><h2 data-en="Ready for launch?" data-pl="Gotowi do startu?">Ready for launch?</h2><a class="btn" href="registration.html" data-en="Registration details" data-pl="Informacje o zapisach">Registration details</a></section>
+</main>
+
+<footer><strong>WCSM 2027</strong><span data-en="World Championship Space Models" data-pl="Mistrzostwa Świata Modeli Kosmicznych">World Championship Space Models</span><span data-en="Official details will be published when confirmed." data-pl="Oficjalne informacje zostaną opublikowane po potwierdzeniu.">Official details will be published when confirmed.</span></footer>
 
 <script>
-const canvas = document.getElementById("game");
-const ctx = canvas.getContext("2d");
-
-const box = 20;
-let snake = [{ x: 9 * box, y: 10 * box }];
-let direction = "RIGHT";
-
-let food = {
-  x: Math.floor(Math.random() * 20) * box,
-  y: Math.floor(Math.random() * 20) * box
-};
-
-document.addEventListener("keydown", changeDirection);
-
-function changeDirection(event) {
-  if (event.key === "ArrowLeft" && direction !== "RIGHT") direction = "LEFT";
-  if (event.key === "ArrowUp" && direction !== "DOWN") direction = "UP";
-  if (event.key === "ArrowRight" && direction !== "LEFT") direction = "RIGHT";
-  if (event.key === "ArrowDown" && direction !== "UP") direction = "DOWN";
-}
-
-function collision(head, body) {
-  return body.some(segment => segment.x === head.x && segment.y === head.y);
-}
-
-function draw() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-  // Snake
-  for (let i = 0; i < snake.length; i++) {
-    ctx.fillStyle = i === 0 ? "lime" : "green";
-    ctx.fillRect(snake[i].x, snake[i].y, box, box);
+const pages=[
+["index.html","Home","Start"],
+["information.html","Information","Informacje"],
+["bulletins.html","Bulletins","Komunikaty"],
+["registration.html","Registration","Rejestracja"],
+["competitors.html","Competitors","Zawodnicy"],
+["results.html","Results","Wyniki"],
+["gallery.html","Gallery","Galeria"]
+];
+const current=location.pathname.split("/").pop()||"index.html";
+document.getElementById("nav").innerHTML=pages.map(p=>`<a href="${p[0]}" ${p[0]===current?'class="active"':''} data-en="${p[1]}" data-pl="${p[2]}">${p[1]}</a>`).join("");
+function setLang(lang){
+ document.documentElement.lang=lang;
+ document.querySelectorAll("[data-en][data-pl]").forEach(el=>{
+  const value=el.getAttribute("data-"+lang);
+  if(value!==null){
+   if(value.includes("<span")||value.includes("<br"))el.innerHTML=value;
+   else el.textContent=value;
   }
-
-  // Food
-  ctx.fillStyle = "red";
-  ctx.fillRect(food.x, food.y, box, box);
-
-  let headX = snake[0].x;
-  let headY = snake[0].y;
-
-  if (direction === "LEFT") headX -= box;
-  if (direction === "UP") headY -= box;
-  if (direction === "RIGHT") headX += box;
-  if (direction === "DOWN") headY += box;
-
-  // Game over
-  if (
-    headX < 0 || headX >= canvas.width ||
-    headY < 0 || headY >= canvas.height ||
-    collision({ x: headX, y: headY }, snake)
-  ) {
-    clearInterval(game);
-    alert("Game Over!");
-    return;
-  }
-
-  // Eat food
-  if (headX === food.x && headY === food.y) {
-    food = {
-      x: Math.floor(Math.random() * 20) * box,
-      y: Math.floor(Math.random() * 20) * box
-    };
-  } else {
-    snake.pop();
-  }
-
-  snake.unshift({ x: headX, y: headY });
+ });
+ document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("active",b.dataset.lang===lang));
+ try{localStorage.setItem("wcsm-language",lang)}catch(e){}
 }
-
-const game = setInterval(draw, 150);
+document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>setLang(b.dataset.lang)));
+let saved="en";try{saved=localStorage.getItem("wcsm-language")||"en"}catch(e){}
+setLang(saved==="pl"?"pl":"en");
 </script>
-
 </body>
 </html>
