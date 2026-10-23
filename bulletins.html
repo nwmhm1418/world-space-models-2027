@@ -2,25 +2,284 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bulletins | WCSM 2027</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bulletins | World Championship 2027</title>
+
 <style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap');
-:root{--n:#101d35;--r:#d92f40;--m:#6c788b;--bg:#f5f7fb}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:#19263b;font:16px 'DM Sans',sans-serif;line-height:1.65}a{text-decoration:none;color:inherit}.container{width:min(1160px,90%);margin:auto}header{position:sticky;top:0;background:#ffffffed;backdrop-filter:blur(12px);z-index:5;border-bottom:1px solid #e9edf4}.nav{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;gap:12px;align-items:center}.mark{background:var(--n);color:white;padding:10px;border-radius:15px;font-size:24px}.brand strong{display:block;font:800 18px Manrope}.brand small{font-size:9px;color:var(--m);letter-spacing:1px}.links{display:flex;gap:4px;align-items:center;flex-wrap:wrap}.links a,.lang{padding:10px;border:0;border-radius:12px;font-size:13px;font-weight:700}.links a{color:#536176}.links a:hover,.links .active{background:#edf1f8}.lang{background:var(--n);color:white;cursor:pointer}.toggle{display:none;border:0;border-radius:12px;padding:10px;font-size:20px}.hero{padding:70px 0;background:linear-gradient(120deg,#101d35,#253d60);color:white;border-radius:0 0 34px 34px}.kicker{color:#ff8995;font-size:12px;letter-spacing:2px;font-weight:800;text-transform:uppercase}.hero h1{font:800 clamp(36px,5vw,58px) Manrope;letter-spacing:-1px;margin:15px 0}.hero p{color:#d3dced;max-width:640px;font-size:18px}.section{padding:55px 0}.notice{background:#fff2f3;border-left:4px solid var(--r);padding:18px 20px;border-radius:12px;margin-bottom:25px}.docs{display:grid;gap:15px}.doc{display:flex;align-items:center;gap:20px;background:white;border-radius:20px;padding:22px 25px;box-shadow:0 12px 40px #1425410b}.doc-icon{width:54px;height:54px;flex-shrink:0;background:#edf1f8;border-radius:17px;display:grid;place-items:center;font-size:25px}.doc-body{flex:1}.doc h2{font:700 20px Manrope;margin:0 0 4px}.doc p{margin:0;color:var(--m);font-size:14px}.tag{display:inline-block;background:#edf1f8;padding:5px 10px;border-radius:30px;font-size:11px;font-weight:700;margin-top:8px}.doc a{background:var(--n);color:white;padding:11px 16px;border-radius:12px;font-weight:700;font-size:13px}.footer{background:#0b1528;color:white;margin-top:35px;padding:38px 0 22px}.footer p,.footer a{color:#bac6d9;font-size:13px}.footrow{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.footlinks{display:flex;gap:16px;flex-wrap:wrap}.copyright{border-top:1px solid #29364b;padding-top:18px;margin-top:25px;color:#9ba9bf;font-size:12px}@media(max-width:950px){.toggle{display:block;margin-left:auto}.links{display:none;width:100%;flex-direction:column;align-items:stretch;padding-bottom:15px}.links.open{display:flex}.links a,.lang{text-align:center}.nav{flex-wrap:wrap;padding:12px 0}}@media(max-width:600px){.doc{align-items:flex-start;flex-wrap:wrap}.doc a{margin-left:74px}.hero{padding:55px 0}}
+* { box-sizing: border-box; }
+
+:root {
+    --bg: #f5f7fb;
+    --surface: #ffffff;
+    --text: #17243a;
+    --muted: #68758a;
+    --accent: #2457a7;
+    --border: #e4e9f2;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+header {
+    background: white;
+    border-bottom: 1px solid var(--border);
+    padding: 18px 5%;
+}
+
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 76px;
+    height: 76px;
+    object-fit: contain;
+}
+
+.language {
+    border: 1px solid var(--border);
+    background: white;
+    border-radius: 12px;
+    padding: 10px 16px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--muted);
+    padding: 11px 15px;
+    border-radius: 12px;
+    font-size: 14px;
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--accent);
+    background: #edf3ff;
+}
+
+main {
+    max-width: 1150px;
+    margin: auto;
+    padding: 55px 24px 90px;
+}
+
+h1 {
+    font-size: clamp(36px, 5vw, 58px);
+    letter-spacing: -1.5px;
+    margin: 0 0 12px;
+}
+
+.subtitle {
+    color: var(--muted);
+    font-size: 17px;
+    margin-bottom: 35px;
+}
+
+.files {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+}
+
+.file-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    min-height: 220px;
+    padding: 25px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    text-decoration: none;
+    color: var(--text);
+    box-shadow: 0 10px 30px rgba(30, 55, 90, 0.04);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.file-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(30, 55, 90, 0.09);
+}
+
+.file-icon {
+    display: grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    background: #edf3ff;
+    border-radius: 16px;
+    color: var(--accent);
+    font-size: 24px;
+}
+
+.file-card h2 {
+    font-size: 20px;
+    margin: 0;
+}
+
+.file-card p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.open-link {
+    margin-top: auto;
+    color: var(--accent);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    color: var(--muted);
+    padding: 25px;
+    font-size: 13px;
+}
+
+@media (max-width: 700px) {
+    header { padding: 14px 4%; }
+    .logo { width: 58px; height: 58px; }
+    nav { gap: 4px; margin-top: 14px; }
+    nav a { padding: 9px 10px; font-size: 13px; }
+    main { padding: 35px 15px 60px; }
+}
 </style>
 </head>
+
 <body>
-<header><div class="container nav"><a class="brand" href="index.html"><span class="mark">🚀</span><span><strong>WCSM 2027</strong><small>WORLD CHAMPIONSHIP FOR SPACE MODELS</small></span></a><button class="toggle" id="toggle">☰</button><nav class="links" id="links">
-<a href="index.html" data-en="Home" data-pl="Strona główna">Home</a><a href="information.html" data-en="Information" data-pl="Informacje">Information</a><a class="active" href="bulletins.html" data-en="Bulletins" data-pl="Biuletyny">Bulletins</a><a href="registration.html" data-en="Registration" data-pl="Rejestracja">Registration</a><a href="competitors.html" data-en="Competitors" data-pl="Zawodnicy">Competitors</a><a href="results.html" data-en="Results" data-pl="Wyniki">Results</a><a href="gallery.html" data-en="Gallery" data-pl="Galeria">Gallery</a><button class="lang" id="lang">PL</button></nav></div></header>
-<main><section class="hero"><div class="container"><div class="kicker" data-en="Official documents" data-pl="Oficjalne dokumenty">Official documents</div><h1 data-en="Bulletins &amp;<br>Downloads" data-pl="Biuletyny i<br>dokumenty">Bulletins &amp;<br>Downloads</h1><p data-en="Official announcements, competition documents and useful files for participating teams." data-pl="Oficjalne komunikaty, dokumenty zawodów i przydatne pliki dla uczestniczących ekip.">Official announcements, competition documents and useful files for participating teams.</p></div></section>
-<section class="section"><div class="container"><div class="notice" data-en="Documents will be added when they are officially released. Download links are not active until a file is published." data-pl="Dokumenty zostaną dodane po ich oficjalnym opublikowaniu. Linki do pobrania będą aktywne po udostępnieniu plików.">Documents will be added when they are officially released. Download links are not active until a file is published.</div>
-<div class="docs">
-<article class="doc"><div class="doc-icon">📄</div><div class="doc-body"><h2 data-en="Bulletin No. 1" data-pl="Biuletyn nr 1">Bulletin No. 1</h2><p data-en="General event information and preliminary details." data-pl="Informacje ogólne i wstępne szczegóły wydarzenia.">General event information and preliminary details.</p><span class="tag" data-en="Not published yet" data-pl="Jeszcze nieopublikowany">Not published yet</span></div></article>
-<article class="doc"><div class="doc-icon">📋</div><div class="doc-body"><h2 data-en="Competition regulations" data-pl="Regulamin zawodów">Competition regulations</h2><p data-en="Official rules and applicable competition requirements." data-pl="Oficjalne zasady i wymagania dotyczące zawodów.">Official rules and applicable competition requirements.</p><span class="tag" data-en="Not published yet" data-pl="Jeszcze nieopublikowany">Not published yet</span></div></article>
-<article class="doc"><div class="doc-icon">📝</div><div class="doc-body"><h2 data-en="Entry forms" data-pl="Formularze zgłoszeniowe">Entry forms</h2><p data-en="Forms and instructions for national team registration." data-pl="Formularze i instrukcje zgłaszania reprezentacji narodowych.">Forms and instructions for national team registration.</p><span class="tag" data-en="Not published yet" data-pl="Jeszcze nieopublikowane">Not published yet</span></div></article>
-<article class="doc"><div class="doc-icon">🗓️</div><div class="doc-body"><h2 data-en="Competition schedule" data-pl="Harmonogram zawodów">Competition schedule</h2><p data-en="Official schedule of events, rounds and ceremonies." data-pl="Oficjalny harmonogram konkurencji, kolejek i ceremonii.">Official schedule of events, rounds and ceremonies.</p><span class="tag" data-en="Not published yet" data-pl="Jeszcze nieopublikowany">Not published yet</span></div></article>
-</div></div></section></main>
-<footer class="footer"><div class="container"><div class="footrow"><div><strong>WCSM 2027</strong><p data-en="Official championship website." data-pl="Oficjalna strona mistrzostw.">Official championship website.</p></div><div class="footlinks"><a href="information.html" data-en="Information" data-pl="Informacje">Information</a><a href="registration.html" data-en="Registration" data-pl="Rejestracja">Registration</a><a href="gallery.html" data-en="Gallery" data-pl="Galeria">Gallery</a></div></div><div class="copyright">© 2027 World Championship for Space Models</div></div></footer>
+
+<header>
+    <div class="header-top">
+        <a href="index.html" aria-label="Home">
+            <img class="logo" src="images/logo.png" alt="Championship logo">
+        </a>
+        <button class="language" id="languageButton" type="button">
+            🇵🇱 Polski
+        </button>
+    </div>
+
+    <nav>
+        <a href="index.html" data-en="Home" data-pl="Strona główna">Home</a>
+        <a class="active" href="bulletins.html" data-en="Bulletins" data-pl="Biuletyny">Bulletins</a>
+        <a href="general.html" data-en="General" data-pl="Ogólne">General</a>
+        <a href="results.html" data-en="Results" data-pl="Wyniki">Results</a>
+        <a href="information.html" data-en="Information" data-pl="Informacje">Information</a>
+        <a href="registration.html" data-en="Registration" data-pl="Rejestracja">Registration</a>
+        <a href="gallery.html" data-en="Photo Gallery" data-pl="Galeria zdjęć">Photo Gallery</a>
+    </nav>
+</header>
+
+<main>
+    <h1 data-en="Files & Documents" data-pl="Pliki i dokumenty">
+        Files &amp; Documents
+    </h1>
+
+    <p class="subtitle"
+       data-en="Official bulletins, entry forms and competition documents."
+       data-pl="Oficjalne biuletyny, formularze zgłoszeniowe i dokumenty zawodów.">
+        Official bulletins, entry forms and competition documents.
+    </p>
+
+    <section class="files">
+
+        <a class="file-card" href="#" target="_blank" rel="noopener">
+            <div class="file-icon">PDF</div>
+            <h2>Bulletin 1</h2>
+            <p data-en="First official championship bulletin."
+               data-pl="Pierwszy oficjalny biuletyn mistrzostw.">
+                First official championship bulletin.
+            </p>
+            <span class="open-link" data-en="Open document ↗" data-pl="Otwórz dokument ↗">Open document ↗</span>
+        </a>
+
+        <a class="file-card" href="#" target="_blank" rel="noopener">
+            <div class="file-icon">PDF</div>
+            <h2>Bulletin 2</h2>
+            <p data-en="Second official championship bulletin."
+               data-pl="Drugi oficjalny biuletyn mistrzostw.">
+                Second official championship bulletin.
+            </p>
+            <span class="open-link" data-en="Open document ↗" data-pl="Otwórz dokument ↗">Open document ↗</span>
+        </a>
+
+        <a class="file-card" href="#" target="_blank" rel="noopener">
+            <div class="file-icon">PDF</div>
+            <h2>Bulletin 3</h2>
+            <p data-en="Third official championship bulletin."
+               data-pl="Trzeci oficjalny biuletyn mistrzostw.">
+                Third official championship bulletin.
+            </p>
+            <span class="open-link" data-en="Open document ↗" data-pl="Otwórz dokument ↗">Open document ↗</span>
+        </a>
+
+        <a class="file-card" href="#" target="_blank" rel="noopener">
+            <div class="file-icon">FORM</div>
+            <h2>Final Entry Form</h2>
+            <p data-en="Final registration form for competitors."
+               data-pl="Końcowy formularz zgłoszeniowy zawodników.">
+                Final registration form for competitors.
+            </p>
+            <span class="open-link" data-en="Open form ↗" data-pl="Otwórz formularz ↗">Open form ↗</span>
+        </a>
+
+        <a class="file-card" href="#" target="_blank" rel="noopener">
+            <div class="file-icon">FORM</div>
+            <h2>Motors Order Form</h2>
+            <p data-en="Order form for competition rocket motors."
+               data-pl="Formularz zamówienia silników rakietowych.">
+                Order form for competition rocket motors.
+            </p>
+            <span class="open-link" data-en="Open form ↗" data-pl="Otwórz formularz ↗">Open form ↗</span>
+        </a>
+
+    </section>
+</main>
+
+<footer>World Championship for Space Models 2027</footer>
+
 <script>
-const links=document.getElementById('links'),toggle=document.getElementById('toggle'),langButton=document.getElementById('lang');toggle.onclick=()=>links.classList.toggle('open');function setLang(l){document.documentElement.lang=l;document.querySelectorAll('[data-en]').forEach(e=>e.innerHTML=e.getAttribute('data-'+l));langButton.textContent=l==='en'?'PL':'EN';localStorage.setItem('wcsm-language',l)}langButton.onclick=()=>setLang(document.documentElement.lang==='en'?'pl':'en');setLang(localStorage.getItem('wcsm-language')||'en');
-</script></body></html>
+const languageButton = document.getElementById("languageButton");
+let currentLanguage = localStorage.getItem("wcsm-language") || "en";
+
+function setLanguage(language) {
+    currentLanguage = language;
+    localStorage.setItem("wcsm-language", language);
+    document.documentElement.lang = language;
+
+    document.querySelectorAll("[data-en]").forEach(element => {
+        element.textContent = element.dataset[language];
+    });
+
+    languageButton.textContent =
+        language === "en" ? "🇵🇱 Polski" : "🇬🇧 English";
+}
+
+languageButton.addEventListener("click", () => {
+    setLanguage(currentLanguage === "en" ? "pl" : "en");
+});
+
+setLanguage(currentLanguage);
+</script>
+
+</body>
+</html>
