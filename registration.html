@@ -2,27 +2,225 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Registration | WCSM 2027</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration | World Championship for Space Models 2027</title>
+
 <style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap');
-:root{--n:#101d35;--r:#d92f40;--m:#6c788b;--bg:#f5f7fb}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:#19263b;font:16px 'DM Sans',sans-serif;line-height:1.65}a{color:inherit;text-decoration:none}.container{width:min(1160px,90%);margin:auto}header{position:sticky;top:0;background:#ffffffed;backdrop-filter:blur(12px);z-index:5;border-bottom:1px solid #e9edf4}.nav{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;gap:12px;align-items:center}.mark{background:var(--n);color:white;padding:10px;border-radius:15px;font-size:24px}.brand strong{display:block;font:800 18px Manrope}.brand small{font-size:9px;color:var(--m);letter-spacing:1px}.links{display:flex;gap:4px;align-items:center;flex-wrap:wrap}.links a,.lang{padding:10px;border:0;border-radius:12px;font-size:13px;font-weight:700}.links a{color:#536176}.links a:hover,.links .active{background:#edf1f8}.lang{background:var(--n);color:white;cursor:pointer}.toggle{display:none;border:0;border-radius:12px;padding:10px;font-size:20px}.hero{padding:70px 0;background:linear-gradient(120deg,#101d35,#253d60);color:white;border-radius:0 0 34px 34px}.kicker{color:#ff8995;font-size:12px;letter-spacing:2px;font-weight:800;text-transform:uppercase}.hero h1{font:800 clamp(36px,5vw,58px) Manrope;letter-spacing:-1px;margin:15px 0}.hero p{color:#d3dced;max-width:640px;font-size:18px}.section{padding:55px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.card{background:white;border-radius:24px;padding:28px;box-shadow:0 12px 40px #1425410c}.card h2{font:700 23px Manrope}.card p,.muted{color:var(--m)}.step{display:flex;gap:15px;margin:22px 0}.number{flex-shrink:0;width:42px;height:42px;border-radius:14px;background:#edf1f8;display:grid;place-items:center;font-weight:800;color:var(--n)}.notice{background:#fff2f3;border-left:4px solid var(--r);padding:18px 20px;border-radius:12px}.footer{background:#0b1528;color:white;margin-top:35px;padding:38px 0 22px}.footer p,.footer a{color:#bac6d9;font-size:13px}.footrow{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.footlinks{display:flex;gap:16px;flex-wrap:wrap}.copyright{border-top:1px solid #29364b;padding-top:18px;margin-top:25px;color:#9ba9bf;font-size:12px}@media(max-width:950px){.toggle{display:block;margin-left:auto}.links{display:none;width:100%;flex-direction:column;align-items:stretch;padding-bottom:15px}.links.open{display:flex}.links a,.lang{text-align:center}.nav{flex-wrap:wrap;padding:12px 0}.grid{grid-template-columns:1fr}}
+* { box-sizing: border-box; }
+
+:root {
+    --bg: #f5f7fb;
+    --text: #17243a;
+    --muted: #68758a;
+    --accent: #2457a7;
+    --border: #e4e9f2;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+header {
+    background: white;
+    border-bottom: 1px solid var(--border);
+    padding: 18px 5%;
+}
+
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 76px;
+    height: 76px;
+    object-fit: contain;
+}
+
+.language {
+    border: 1px solid var(--border);
+    background: white;
+    color: var(--text);
+    border-radius: 12px;
+    padding: 10px 16px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--muted);
+    padding: 11px 15px;
+    border-radius: 12px;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+nav a:hover, nav a.active {
+    color: var(--accent);
+    background: #edf3ff;
+}
+
+main {
+    max-width: 1150px;
+    margin: auto;
+    padding: 65px 24px 100px;
+}
+
+.hero {
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 25px;
+    background: linear-gradient(135deg, #ffffff, #eaf1fc);
+    border: 1px solid var(--border);
+    border-radius: 32px;
+    box-shadow: 0 15px 50px rgba(30, 55, 90, 0.06);
+}
+
+h1 {
+    margin: 0;
+    font-size: clamp(42px, 7vw, 76px);
+    letter-spacing: -2px;
+}
+
+.subtitle {
+    max-width: 650px;
+    color: var(--muted);
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 24px auto 0;
+}
+
+.form-button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 23px;
+    background: var(--accent);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 14px;
+    transition: 0.2s;
+}
+
+.form-button:hover {
+    background: #194583;
+    transform: translateY(-2px);
+}
+
+.note {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 18px;
+}
+
+footer {
+    text-align: center;
+    color: var(--muted);
+    padding: 25px;
+    font-size: 13px;
+}
+
+@media (max-width: 700px) {
+    header { padding: 14px 4%; }
+    .logo { width: 58px; height: 58px; }
+    nav { gap: 4px; margin-top: 14px; }
+    nav a { padding: 9px 10px; font-size: 13px; }
+    main { padding: 35px 15px 60px; }
+    .hero { min-height: 330px; border-radius: 24px; }
+    h1 { letter-spacing: -1px; }
+}
 </style>
 </head>
+
 <body>
-<header><div class="container nav"><a class="brand" href="index.html"><span class="mark">🚀</span><span><strong>WCSM 2027</strong><small>WORLD CHAMPIONSHIP FOR SPACE MODELS</small></span></a><button class="toggle" id="toggle">☰</button><nav class="links" id="links">
-<a href="index.html" data-en="Home" data-pl="Strona główna">Home</a><a href="information.html" data-en="Information" data-pl="Informacje">Information</a><a href="bulletins.html" data-en="Bulletins" data-pl="Biuletyny">Bulletins</a><a class="active" href="registration.html" data-en="Registration" data-pl="Rejestracja">Registration</a><a href="competitors.html" data-en="Competitors" data-pl="Zawodnicy">Competitors</a><a href="results.html" data-en="Results" data-pl="Wyniki">Results</a><a href="gallery.html" data-en="Gallery" data-pl="Galeria">Gallery</a><button class="lang" id="lang">PL</button></nav></div></header>
+<header>
+    <div class="header-top">
+        <a href="index.html" aria-label="Home">
+            <img class="logo" src="images/logo.png" alt="Championship logo">
+        </a>
+
+        <button class="language" id="languageButton" type="button">
+            🇵🇱 Polski
+        </button>
+    </div>
+
+    <nav>
+        <a href="index.html" data-en="Home" data-pl="Strona główna">Home</a>
+        <a href="bulletins.html" data-en="Bulletins" data-pl="Biuletyny">Bulletins</a>
+        <a href="general.html" data-en="General" data-pl="Ogólne">General</a>
+        <a href="results.html" data-en="Results" data-pl="Wyniki">Results</a>
+        <a href="information.html" data-en="Information" data-pl="Informacje">Information</a>
+        <a class="active" href="registration.html" data-en="Registration" data-pl="Rejestracja">Registration</a>
+        <a href="gallery.html" data-en="Photo Gallery" data-pl="Galeria zdjęć">Photo Gallery</a>
+    </nav>
+</header>
+
 <main>
-<section class="hero"><div class="container"><div class="kicker" data-en="Join the competition" data-pl="Dołącz do rywalizacji">Join the competition</div><h1 data-en="Team<br>Registration" data-pl="Rejestracja<br>ekip">Team<br>Registration</h1><p data-en="Registration information and official entry procedures for national teams and competitors." data-pl="Informacje rejestracyjne i oficjalne procedury zgłoszeń reprezentacji oraz zawodników.">Registration information and official entry procedures for national teams and competitors.</p></div></section>
-<section class="section"><div class="container"><div class="notice" data-en="Registration is not open yet. Official deadlines, forms and submission instructions will be published here when confirmed." data-pl="Rejestracja nie jest jeszcze otwarta. Oficjalne terminy, formularze i instrukcje zgłoszeń zostaną opublikowane po ich potwierdzeniu.">Registration is not open yet. Official deadlines, forms and submission instructions will be published here when confirmed.</div>
-<div class="grid" style="margin-top:22px"><article class="card"><h2 data-en="How registration will work" data-pl="Jak będzie wyglądać rejestracja">How registration will work</h2>
-<div class="step"><div class="number">1</div><div><strong data-en="Read the official bulletin" data-pl="Przeczytaj oficjalny biuletyn">Read the official bulletin</strong><div class="muted" data-en="Check eligibility, rules and registration deadlines." data-pl="Sprawdź zasady udziału i terminy zgłoszeń.">Check eligibility, rules and registration deadlines.</div></div></div>
-<div class="step"><div class="number">2</div><div><strong data-en="Prepare team details" data-pl="Przygotuj dane ekipy">Prepare team details</strong><div class="muted" data-en="Collect the information required by the organisers." data-pl="Zbierz informacje wymagane przez organizatorów.">Collect the information required by the organisers.</div></div></div>
-<div class="step"><div class="number">3</div><div><strong data-en="Submit the official entry" data-pl="Prześlij oficjalne zgłoszenie">Submit the official entry</strong><div class="muted" data-en="Use the official form and submission method once announced." data-pl="Skorzystaj z oficjalnego formularza i sposobu zgłoszenia po ich ogłoszeniu.">Use the official form and submission method once announced.</div></div></div>
-</article>
-<article class="card"><h2 data-en="Registration status" data-pl="Status rejestracji">Registration status</h2><p data-en="Entry forms and registration links will appear in this section after publication by the organisers." data-pl="Formularze i linki rejestracyjne pojawią się w tej sekcji po ich opublikowaniu przez organizatorów.">Entry forms and registration links will appear in this section after publication by the organisers.</p><p><strong data-en="Current status:" data-pl="Aktualny status:">Current status:</strong> <span style="color:#d92f40;font-weight:800" data-en="Not yet open" data-pl="Jeszcze nieotwarta">Not yet open</span></p><a href="bulletins.html" style="display:inline-block;background:#101d35;color:white;border-radius:12px;padding:12px 17px;font-weight:700" data-en="Check official bulletins →" data-pl="Sprawdź oficjalne biuletyny →">Check official bulletins →</a></article></div></div></section>
+    <section class="hero">
+        <h1 data-en="Registration" data-pl="Rejestracja">Registration</h1>
+
+        <p class="subtitle"
+           data-en="Information about competitor registration and entry forms will be available here."
+           data-pl="Informacje dotyczące rejestracji zawodników i formularze zgłoszeniowe będą dostępne tutaj.">
+            Information about competitor registration and entry forms will be available here.
+        </p>
+
+        <a class="form-button" href="#"
+           data-en="Registration form"
+           data-pl="Formularz zgłoszeniowy">
+            Registration form
+        </a>
+
+        <p class="note"
+           data-en="The registration form link will be published soon."
+           data-pl="Link do formularza zgłoszeniowego zostanie opublikowany wkrótce.">
+            The registration form link will be published soon.
+        </p>
+    </section>
 </main>
-<footer class="footer"><div class="container"><div class="footrow"><div><strong>WCSM 2027</strong><p data-en="Official championship website." data-pl="Oficjalna strona mistrzostw.">Official championship website.</p></div><div class="footlinks"><a href="information.html" data-en="Information" data-pl="Informacje">Information</a><a href="bulletins.html" data-en="Bulletins" data-pl="Biuletyny">Bulletins</a><a href="gallery.html" data-en="Gallery" data-pl="Galeria">Gallery</a></div></div><div class="copyright">© 2027 World Championship for Space Models</div></div></footer>
+
+<footer>World Championship for Space Models 2027</footer>
+
 <script>
-const links=document.getElementById('links'),toggle=document.getElementById('toggle'),langButton=document.getElementById('lang');toggle.onclick=()=>links.classList.toggle('open');function setLang(l){document.documentElement.lang=l;document.querySelectorAll('[data-en]').forEach(e=>e.innerHTML=e.getAttribute('data-'+l));langButton.textContent=l==='en'?'PL':'EN';localStorage.setItem('wcsm-language',l)}langButton.onclick=()=>setLang(document.documentElement.lang==='en'?'pl':'en');setLang(localStorage.getItem('wcsm-language')||'en');
-</script></body></html>
+const languageButton = document.getElementById("languageButton");
+let currentLanguage = localStorage.getItem("wcsm-language") || "en";
+
+function setLanguage(language) {
+    currentLanguage = language;
+    localStorage.setItem("wcsm-language", language);
+    document.documentElement.lang = language;
+
+    document.querySelectorAll("[data-en]").forEach(element => {
+        element.textContent = element.dataset[language];
+    });
+
+    languageButton.textContent =
+        language === "en" ? "🇵🇱 Polski" : "🇬🇧 English";
+}
+
+languageButton.addEventListener("click", () => {
+    setLanguage(currentLanguage === "en" ? "pl" : "en");
+});
+
+setLanguage(currentLanguage);
+</script>
+</body>
+</html>
