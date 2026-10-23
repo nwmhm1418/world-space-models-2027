@@ -19,6 +19,258 @@ header{position:sticky;top:0;z-index:10;background:#ffffffed;backdrop-filter:blu
 .brand small{display:block;font-size:9px;color:var(--muted);letter-spacing:1px;font-weight:700}
 .links{display:flex;align-items:center;justify-content:flex-end;gap:3px;flex-wrap:wrap}
 .links a,.lang{padding:9px 11px;border:0;border-radius:12px;font-size:13px;font-weight:700}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>World Championship for Space Models 2027</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #f5f7fb;
+    --surface: #ffffff;
+    --text: #17243a;
+    --muted: #68758a;
+    --accent: #2457a7;
+    --border: #e4e9f2;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 18px 5%;
+}
+
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo {
+    width: 76px;
+    height: 76px;
+    object-fit: contain;
+}
+
+.language {
+    border: 1px solid var(--border);
+    background: white;
+    color: var(--text);
+    border-radius: 12px;
+    padding: 10px 16px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--muted);
+    padding: 11px 15px;
+    border-radius: 12px;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--accent);
+    background: #edf3ff;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 70px 24px 100px;
+}
+
+.hero {
+    min-height: 460px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 55px 25px;
+    background: linear-gradient(135deg, #ffffff, #eaf1fc);
+    border: 1px solid var(--border);
+    border-radius: 32px;
+    box-shadow: 0 15px 50px rgba(30, 55, 90, 0.06);
+}
+
+.eyebrow {
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 24px;
+}
+
+h1 {
+    max-width: 900px;
+    margin: 0;
+    font-size: clamp(38px, 6vw, 76px);
+    line-height: 1.08;
+    letter-spacing: -2px;
+}
+
+.date {
+    color: var(--muted);
+    font-size: clamp(18px, 2vw, 24px);
+    margin-top: 28px;
+}
+
+footer {
+    text-align: center;
+    color: var(--muted);
+    padding: 25px;
+    font-size: 13px;
+}
+
+@media (max-width: 700px) {
+    header {
+        padding: 14px 4%;
+    }
+
+    .logo {
+        width: 58px;
+        height: 58px;
+    }
+
+    nav {
+        gap: 4px;
+        margin-top: 14px;
+    }
+
+    nav a {
+        padding: 9px 10px;
+        font-size: 13px;
+    }
+
+    main {
+        padding: 35px 15px 60px;
+    }
+
+    .hero {
+        min-height: 390px;
+        border-radius: 24px;
+    }
+
+    h1 {
+        letter-spacing: -1px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="header-top">
+        <a href="index.html" aria-label="Home">
+            <img class="logo" src="images/logo.png" alt="Championship logo">
+        </a>
+
+        <button class="language" id="languageButton" type="button">
+            🇵🇱 Polski
+        </button>
+    </div>
+
+    <nav>
+        <a class="active" href="index.html"
+           data-en="Home" data-pl="Strona główna">Home</a>
+        <a href="bulletins.html"
+           data-en="Bulletins" data-pl="Biuletyny">Bulletins</a>
+        <a href="general.html"
+           data-en="General" data-pl="Ogólne">General</a>
+        <a href="results.html"
+           data-en="Results" data-pl="Wyniki">Results</a>
+        <a href="information.html"
+           data-en="Information" data-pl="Informacje">Information</a>
+        <a href="registration.html"
+           data-en="Registration" data-pl="Rejestracja">Registration</a>
+        <a href="gallery.html"
+           data-en="Photo Gallery" data-pl="Galeria zdjęć">Photo Gallery</a>
+    </nav>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="eyebrow"
+             data-en="International Model Rocketry"
+             data-pl="Międzynarodowe zawody rakietowe">
+            International Model Rocketry
+        </div>
+
+        <h1 data-en="World Championship for Space Models"
+            data-pl="Mistrzostwa Świata Modeli Kosmicznych">
+            World Championship for Space Models
+        </h1>
+
+        <div class="date"
+             data-en="xx-xx month 2027"
+             data-pl="xx-xx miesiąc 2027">
+            xx-xx month 2027
+        </div>
+    </section>
+</main>
+
+<footer>
+    World Championship for Space Models 2027
+</footer>
+
+<script>
+const languageButton = document.getElementById("languageButton");
+let currentLanguage = localStorage.getItem("wcsm-language") || "en";
+
+function setLanguage(language) {
+    currentLanguage = language;
+    localStorage.setItem("wcsm-language", language);
+
+    document.documentElement.lang = language;
+
+    document.querySelectorAll("[data-en]").forEach(element => {
+        element.textContent = element.dataset[language];
+    });
+
+    languageButton.textContent =
+        language === "en" ? "🇵🇱 Polski" : "🇬🇧 English";
+}
+
+languageButton.addEventListener("click", () => {
+    setLanguage(currentLanguage === "en" ? "pl" : "en");
+});
+
+setLanguage(currentLanguage);
+</script>
+
+</body>
+</html>
+
 .links a{color:#536176}.links a:hover,.links a.active{background:#edf1f8;color:var(--navy)}
 .lang{background:var(--navy);color:white;cursor:pointer}
 .toggle{display:none;border:0;background:#edf1f8;border-radius:12px;padding:10px;font-size:20px}
