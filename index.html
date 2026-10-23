@@ -4,17 +4,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>World Championship for Space Models 2027</title>
 
   <style>
     :root {
-      --navy: #07172e;
-      --header: #051227;
-      --sky: #83d4ff;
-      --text: #f7faff;
-      --muted: #d5e2f1;
-      --border: rgba(255,255,255,.16);
+      --navy: #102b49;
+      --navy-dark: #0b2038;
+      --blue: #315b80;
+      --white: #ffffff;
+      --light: #f3f5f7;
+      --text: #172b3d;
+      --muted: #5d6c7a;
+      --border: #dce2e8;
     }
 
     * {
@@ -23,22 +24,22 @@
 
     body {
       margin: 0;
-      min-height: 100vh;
-      font-family: Arial, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       color: var(--text);
-      background: var(--navy);
+      background: var(--light);
     }
 
+    /* Górny pasek */
+
     header {
-      position: relative;
-      z-index: 2;
+      min-height: 88px;
+      padding: 14px 4%;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 24px;
-      padding: 18px 5%;
-      background: var(--header);
-      border-bottom: 1px solid var(--border);
+      background: var(--navy-dark);
+      border-bottom: 4px solid var(--blue);
       flex-wrap: wrap;
     }
 
@@ -46,117 +47,150 @@
       display: flex;
       align-items: center;
       gap: 12px;
-      color: white;
+      color: var(--white);
       text-decoration: none;
-      font-weight: bold;
-      letter-spacing: 1px;
+      flex-shrink: 0;
     }
 
     .brand img {
-      width: 48px;
-      height: 48px;
+      width: 50px;
+      height: 50px;
       object-fit: contain;
     }
 
-    .brand span {
+    .brand-name {
       font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .brand-year {
+      color: #b9d0e5;
+      font-weight: 400;
     }
 
     nav {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 20px;
+      gap: 19px;
       flex-wrap: wrap;
     }
 
     nav a {
-      color: var(--muted);
+      padding: 8px 0;
+      color: #e0e8f0;
       text-decoration: none;
-      font-size: 14px;
-      transition: color .2s;
+      font-size: 13px;
+      transition: color 0.2s;
     }
 
     nav a:hover,
     nav a.active {
-      color: var(--sky);
+      color: #a9c9e6;
+      border-bottom: 2px solid #a9c9e6;
     }
 
     .language {
       display: flex;
-      gap: 6px;
+      gap: 5px;
+      flex-shrink: 0;
     }
 
     .language button {
-      padding: 7px 10px;
-      color: var(--muted);
+      padding: 7px 9px;
+      color: #e0e8f0;
       background: transparent;
-      border: 1px solid var(--border);
-      border-radius: 6px;
+      border: 1px solid #63778c;
+      border-radius: 3px;
       cursor: pointer;
+      font-size: 12px;
     }
 
     .language button.active,
     .language button:hover {
-      color: var(--navy);
-      background: var(--sky);
+      color: var(--navy-dark);
+      background: var(--white);
+      border-color: var(--white);
     }
 
+    /* Główne zdjęcie i jasny panel */
+
     .hero {
-      position: relative;
+      min-height: 690px;
+      padding: 65px 5%;
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: calc(100vh - 85px);
-      padding: 80px 6%;
-      text-align: center;
-      background:
-        linear-gradient(
-          rgba(3, 14, 31, .48),
-          rgba(3, 14, 31, .72)
-        ),
-        url("tlohome.jpg") center center / cover no-repeat;
-    }
-
-    .hero-content {
       position: relative;
-      z-index: 1;
-      width: min(100%, 1000px);
+
+      background-image:
+        linear-gradient(
+          rgba(10, 28, 47, 0.35),
+          rgba(10, 28, 47, 0.35)
+        ),
+        url("tlohome.jpg");
+
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
     }
 
-    .eyebrow {
-      margin-bottom: 22px;
-      color: var(--sky);
-      font-size: 14px;
-      font-weight: bold;
-      letter-spacing: 4px;
+    .hero-panel {
+      width: min(900px, 100%);
+      padding: 65px 55px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.96);
+      border-top: 6px solid var(--navy);
+      box-shadow: 0 8px 35px rgba(0, 0, 0, 0.18);
+    }
+
+    .event-label {
+      margin: 0 0 22px;
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      line-height: 1.7;
       text-transform: uppercase;
     }
 
     h1 {
-      margin: 0 auto 25px;
-      font-size: clamp(40px, 7vw, 82px);
-      line-height: 1.08;
-      text-shadow: 0 4px 20px rgba(0,0,0,.35);
+      max-width: 780px;
+      margin: 0 auto;
+      color: var(--navy);
+      font-size: clamp(34px, 5vw, 60px);
+      font-weight: 700;
+      line-height: 1.12;
     }
 
-    .date {
-      margin: 0;
-      color: #e0edf9;
-      font-size: clamp(17px, 2.5vw, 25px);
-      letter-spacing: 2px;
+    .title-divider {
+      width: 75px;
+      height: 3px;
+      margin: 28px auto;
+      background: var(--blue);
     }
+
+    .event-date {
+      margin: 0;
+      color: var(--muted);
+      font-size: 18px;
+      letter-spacing: 1px;
+    }
+
+    /* Stopka */
 
     footer {
-      padding: 22px 5%;
-      color: var(--muted);
+      padding: 23px 5%;
+      color: #d5dee7;
+      background: var(--navy-dark);
       text-align: center;
-      background: var(--header);
-      border-top: 1px solid var(--border);
-      font-size: 13px;
+      font-size: 12px;
     }
 
-    @media (max-width: 900px) {
+    /* Urządzenia mobilne */
+
+    @media (max-width: 1100px) {
       header {
         justify-content: center;
       }
@@ -164,36 +198,57 @@
       nav {
         order: 3;
         width: 100%;
-        gap: 14px;
-      }
-
-      .hero {
-        min-height: calc(100vh - 150px);
+        gap: 16px;
       }
     }
 
-    @media (max-width: 500px) {
+    @media (max-width: 600px) {
+      header {
+        padding: 15px 4%;
+        gap: 15px;
+      }
+
+      nav {
+        gap: 8px 14px;
+      }
+
       nav a {
-        font-size: 13px;
+        font-size: 12px;
       }
 
-      .eyebrow {
+      .hero {
+        min-height: 580px;
+        padding: 35px 5%;
+      }
+
+      .hero-panel {
+        padding: 45px 22px;
+      }
+
+      .event-label {
         font-size: 11px;
-        letter-spacing: 2px;
+        letter-spacing: 1.5px;
       }
 
-      .date {
-        letter-spacing: 1px;
+      h1 {
+        font-size: clamp(32px, 8vw, 44px);
+      }
+
+      .event-date {
+        font-size: 16px;
       }
     }
   </style>
 </head>
 
 <body>
+
   <header>
     <a class="brand" href="index.html">
-      <img src="images/logo.png" alt="WCSM logo">
-      <span>WCSM <span style="color:#83d4ff">2027</span></span>
+      <img src="images/logo.png" alt="Championship logo">
+      <span class="brand-name">
+        WCSM <span class="brand-year">2027</span>
+      </span>
     </a>
 
     <nav>
@@ -227,23 +282,28 @@
 
   <main>
     <section class="hero">
-      <div class="hero-content">
-        <div class="eyebrow"
-             data-en="World Championship 2027"
-             data-pl="Mistrzostwa Świata 2027">
-          World Championship 2027
-        </div>
+      <div class="hero-panel">
 
-        <h1 data-en="World Championship for Space Models"
-            data-pl="Mistrzostwa Świata Modeli Kosmicznych">
+        <p class="event-label"
+           data-en="Official Championship · 2027"
+           data-pl="Oficjalne Mistrzostwa · 2027">
+          Official Championship · 2027
+        </p>
+
+        <h1
+          data-en="World Championship for Space Models"
+          data-pl="Mistrzostwa Świata Modeli Kosmicznych">
           World Championship for Space Models
         </h1>
 
-        <p class="date"
+        <div class="title-divider"></div>
+
+        <p class="event-date"
            data-en="xx–xx month 2027"
            data-pl="xx–xx miesiąc 2027">
           xx–xx month 2027
         </p>
+
       </div>
     </section>
   </main>
@@ -261,11 +321,15 @@
         element.textContent = element.dataset[lang];
       });
 
-      document.getElementById('enBtn').classList.toggle('active', lang === 'en');
-      document.getElementById('plBtn').classList.toggle('active', lang === 'pl');
+      document.getElementById('enBtn')
+        .classList.toggle('active', lang === 'en');
+
+      document.getElementById('plBtn')
+        .classList.toggle('active', lang === 'pl');
     }
 
     setLanguage(localStorage.getItem('wcsm-language') || 'en');
   </script>
+
 </body>
 </html>
