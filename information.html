@@ -1,32 +1,159 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Information | WCHSM 2027</title>
+
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Manrope:wght@600;700;800&display=swap');
-*{box-sizing:border-box}body{margin:0;background:#f5f7fb;color:#19263b;font:16px 'DM Sans',sans-serif;line-height:1.65}a{text-decoration:none;color:inherit}.container{width:min(1160px,90%);margin:auto}
-header{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid #e9edf4}.nav{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;align-items:center;gap:12px;flex-shrink:0}.brand img{width:48px;height:48px;object-fit:contain}.brand strong{display:block;font:800 17px Manrope,sans-serif}.brand small{display:block;font-size:9px;color:#6c788b;letter-spacing:1px;font-weight:700}.nav-links{display:flex;align-items:center;justify-content:center;gap:3px;flex-wrap:wrap}.nav-links a{padding:9px 10px;border-radius:12px;font-size:13px;font-weight:600;color:#536176}.nav-links a:hover,.nav-links a.active{background:#edf1f8;color:#101d35}.lang{border:0;background:#101d35;color:white;padding:10px 14px;border-radius:12px;font-weight:700;cursor:pointer}.menu-toggle{display:none;border:0;background:#edf1f8;border-radius:12px;padding:10px 13px;font-size:20px;cursor:pointer}
-.hero{min-height:450px;background:#101d35;color:white;display:flex;align-items:center}.eyebrow{color:#ff9da7;font-size:12px;letter-spacing:2px;font-weight:800;text-transform:uppercase}.hero h1{font:800 clamp(42px,7vw,72px)/1.1 Manrope,sans-serif;margin:18px 0}.hero p{color:#d7dfed;margin:0}.blank{min-height:170px}
-footer{background:#0b1528;color:#bac6d9;padding:25px 0;font-size:12px}footer .container{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-@media(max-width:1050px){.nav{flex-wrap:wrap;padding:14px 0}.menu-toggle{display:block;margin-left:auto}.nav-links{display:none;width:100%;align-items:stretch;flex-direction:column;padding:10px 0}.nav-links.open{display:flex}.nav-links a{padding:12px}.lang{width:100%}}
-@media(max-width:620px){.hero{min-height:370px}}
+
+*{box-sizing:border-box}
+body{margin:0;background:#f5f7fb;color:#19263b;font:16px 'DM Sans',sans-serif;line-height:1.65}
+a{text-decoration:none;color:inherit}
+.container{width:min(1160px,90%);margin:auto}
+
+header{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid #e9edf4}
+.nav{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.brand img{width:48px;height:48px;object-fit:contain}
+.brand strong{display:block;font:800 17px Manrope,sans-serif}
+.brand small{display:block;font-size:9px;color:#6c788b;letter-spacing:1px;font-weight:700}
+
+.nav-links{display:flex;align-items:center;justify-content:center;gap:3px;flex-wrap:wrap}
+.nav-links a{padding:9px 10px;border-radius:12px;font-size:13px;font-weight:600;color:#536176}
+.nav-links a:hover,.nav-links a.active{background:#edf1f8;color:#101d35}
+.lang{border:0;background:#101d35;color:white;padding:10px 14px;border-radius:12px;font-weight:700;cursor:pointer}
+.menu-toggle{display:none;border:0;background:#edf1f8;border-radius:12px;padding:10px 13px;font-size:20px;cursor:pointer}
+
+.hero{min-height:450px;background:#101d35;color:white;display:flex;align-items:center}
+.eyebrow{color:#ff9da7;font-size:12px;letter-spacing:2px;font-weight:800;text-transform:uppercase}
+.hero h1{font:800 clamp(42px,7vw,72px)/1.1 Manrope,sans-serif;margin:18px 0}
+.hero p{color:#d7dfed;margin:0}
+.blank{min-height:170px}
+
+footer{background:#0b1528;color:#bac6d9;padding:25px 0;font-size:12px}
+footer .container{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+/* Logotypy FAI i Aeroklubu Włocławskiego */
+.footer-logos{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:30px;
+    padding-top:25px;
+    margin-top:10px;
+    border-top:1px solid rgba(255,255,255,.2);
+}
+
+.footer-logos img{
+    width:auto;
+    max-width:190px;
+    height:65px;
+    object-fit:contain;
+}
+
+@media(max-width:1050px){
+    .nav{flex-wrap:wrap;padding:14px 0}
+    .menu-toggle{display:block;margin-left:auto}
+    .nav-links{display:none;width:100%;align-items:stretch;flex-direction:column;padding:10px 0}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px}
+    .lang{width:100%}
+}
+
+@media(max-width:620px){
+    .hero{min-height:370px}
+
+    .footer-logos{
+        justify-content:center;
+        flex-wrap:wrap;
+        gap:25px;
+    }
+
+    .footer-logos img{
+        max-width:150px;
+        height:55px;
+    }
+}
 </style>
 </head>
+
 <body>
-<header><div class="container nav">
-<a href="index.html" class="brand"><img src="images/logo.png" alt="WCHSM logo"><div><strong>WCHSM 2027</strong><small>WORLD CHAMPIONSHIP FOR SPACE MODELS</small></div></a>
-<button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
-<nav class="nav-links" id="navLinks">
-<a href="index.html" data-en="Home" data-pl="Strona główna">Home</a><a href="bulletins.html" data-en="Bulletins" data-pl="Biuletyny">Bulletins</a><a href="general.html" data-en="General" data-pl="Ogólne">General</a><a href="results.html" data-en="Results" data-pl="Wyniki">Results</a><a href="information.html" class="active" data-en="Information" data-pl="Informacje">Information</a><a href="registration.html" data-en="Registration" data-pl="Rejestracja">Registration</a><a href="gallery.html" data-en="Photo Gallery" data-pl="Galeria zdjęć">Photo Gallery</a><button class="lang" id="langToggle">PL</button>
-</nav></div></header>
-<main><section class="hero"><div class="container"><div class="eyebrow" data-en="World Championship 2027" data-pl="Mistrzostwa Świata 2027">World Championship 2027</div><h1 data-en="Information" data-pl="Informacje">Information</h1><p data-en="World Championship for Space Models 2027" data-pl="Mistrzostwa Świata Modeli Kosmicznych 2027">World Championship for Space Models 2027</p></div></section><div class="blank"></div></main>
-<footer><div class="container"><span>© 2027 World Championship for Space Models</span><span data-en="Official championship website" data-pl="Oficjalna strona mistrzostw">Official championship website</span></div></footer>
+<header>
+    <div class="container nav">
+        <a href="index.html" class="brand">
+            <img src="images/logo.png" alt="WCHSM logo">
+            <div>
+                <strong>WCHSM 2027</strong>
+                <small>WORLD CHAMPIONSHIP FOR SPACE MODELS</small>
+            </div>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="index.html" data-en="Home" data-pl="Strona główna">Home</a>
+            <a href="bulletins.html" data-en="Bulletins" data-pl="Biuletyny">Bulletins</a>
+            <a href="general.html" data-en="General" data-pl="Ogólne">General</a>
+            <a href="results.html" data-en="Results" data-pl="Wyniki">Results</a>
+            <a href="information.html" class="active" data-en="Information" data-pl="Informacje">Information</a>
+            <a href="registration.html" data-en="Registration" data-pl="Rejestracja">Registration</a>
+            <a href="gallery.html" data-en="Photo Gallery" data-pl="Galeria zdjęć">Photo Gallery</a>
+            <button class="lang" id="langToggle">PL</button>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="container">
+            <div class="eyebrow" data-en="World Championship 2027" data-pl="Mistrzostwa Świata 2027">World Championship 2027</div>
+            <h1 data-en="Information" data-pl="Informacje">Information</h1>
+            <p data-en="World Championship for Space Models 2027" data-pl="Mistrzostwa Świata Modeli Kosmicznych 2027">World Championship for Space Models 2027</p>
+        </div>
+    </section>
+
+    <div class="blank"></div>
+</main>
+
+<footer>
+    <div class="container">
+        <span>© 2027 World Championship for Space Models</span>
+        <span data-en="Official championship website" data-pl="Oficjalna strona mistrzostw">Official championship website</span>
+    </div>
+
+    <div class="container footer-logos">
+        <img src="images/logofai.png" alt="FAI logo">
+        <img src="images/logowloclawek.png" alt="Aeroklub Włocławski logo">
+    </div>
+</footer>
+
 <script>
-const navLinks=document.getElementById('navLinks');document.getElementById('menuToggle').addEventListener('click',()=>navLinks.classList.toggle('open'));const langToggle=document.getElementById('langToggle');
-function setLanguage(lang){document.documentElement.lang=lang;document.querySelectorAll('[data-en][data-pl]').forEach(e=>e.innerHTML=e.getAttribute('data-'+lang));langToggle.textContent=lang==='en'?'PL':'EN';localStorage.setItem('wchsm-language',lang)}
-langToggle.addEventListener('click',()=>setLanguage((document.documentElement.lang||'en')==='en'?'pl':'en'));setLanguage(localStorage.getItem('wchsm-language')||'en');
+const navLinks = document.getElementById('navLinks');
+
+document.getElementById('menuToggle').addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+});
+
+const langToggle = document.getElementById('langToggle');
+
+function setLanguage(lang) {
+    document.documentElement.lang = lang;
+
+    document.querySelectorAll('[data-en][data-pl]').forEach(e => {
+        e.innerHTML = e.getAttribute('data-' + lang);
+    });
+
+    langToggle.textContent = lang === 'en' ? 'PL' : 'EN';
+    localStorage.setItem('wchsm-language', lang);
+}
+
+langToggle.addEventListener('click', () => {
+    setLanguage((document.documentElement.lang || 'en') === 'en' ? 'pl' : 'en');
+});
+
+setLanguage(localStorage.getItem('wchsm-language') || 'en');
 </script>
 </body>
 </html>
