@@ -326,6 +326,26 @@
       font-size: 12px;
     }
 
+    /* PARTNER LOGOS */
+
+    .footer-logos {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      padding-top: 25px;
+      margin-top: 10px;
+      border-top: 1px solid #29364b;
+    }
+
+    .footer-logos img {
+      display: block;
+      width: auto;
+      max-width: 190px;
+      height: 65px;
+      object-fit: contain;
+    }
+
     /* RESPONSIVE */
 
     @media (max-width: 1050px) {
@@ -408,6 +428,17 @@
       .footer-top {
         flex-direction: column;
       }
+
+      .footer-logos {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 25px;
+      }
+
+      .footer-logos img {
+        max-width: 150px;
+        height: 55px;
+      }
     }
   </style>
 </head>
@@ -485,17 +516,16 @@
 
         <div class="info-card">
           <div class="card-icon">📍</div>
-          <h2 data-en="Localisation" data-pl="Lokalizacja">Localisation</h2>
 
-          <p
-            data-en="Kruszyn Airport"
-            data-pl="Lotnisko Kruszyn">
+          <h2 data-en="Localisation" data-pl="Lokalizacja">
+            Localisation
+          </h2>
+
+          <p data-en="Kruszyn Airport" data-pl="Lotnisko Kruszyn">
             Kruszyn Airport
           </p>
 
-          <p
-            data-en="Włocławek, Poland"
-            data-pl="Włocławek, Polska">
+          <p data-en="Włocławek, Poland" data-pl="Włocławek, Polska">
             Włocławek, Poland
           </p>
 
@@ -517,7 +547,10 @@
 
         <div class="info-card">
           <div class="card-icon">ℹ️</div>
-          <h2 data-en="Information" data-pl="Informacje">Information</h2>
+
+          <h2 data-en="Information" data-pl="Informacje">
+            Information
+          </h2>
 
           <p
             data-en="Find important details about the championship, schedule and participation."
@@ -526,7 +559,9 @@
           </p>
 
           <a href="information.html" class="card-link">
-            <span data-en="More information" data-pl="Więcej informacji">More information</span>
+            <span data-en="More information" data-pl="Więcej informacji">
+              More information
+            </span>
             <span aria-hidden="true">→</span>
           </a>
         </div>
@@ -548,8 +583,9 @@
             </div>
           </a>
 
-          <p data-en="Official website of the 2027 World Championship for Space Models."
-             data-pl="Oficjalna strona Mistrzostw Świata Modeli Kosmicznych 2027.">
+          <p
+            data-en="Official website of the 2027 World Championship for Space Models."
+            data-pl="Oficjalna strona Mistrzostw Świata Modeli Kosmicznych 2027.">
             Official website of the 2027 World Championship for Space Models.
           </p>
         </div>
@@ -568,6 +604,13 @@
               data-pl="Oficjalna strona mistrzostw">
           Official championship website
         </span>
+      </div>
+
+      <!-- FAI AND AEROKLUB WLOCLAWSKI LOGOS -->
+
+      <div class="footer-logos">
+        <img src="images/logofai.png" alt="FAI logo">
+        <img src="images/logowloclawek.png" alt="Aeroklub Włocławski logo">
       </div>
 
     </div>
