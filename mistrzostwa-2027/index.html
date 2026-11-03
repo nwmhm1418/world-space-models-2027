@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,13 +22,9 @@
       --radius: 24px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
@@ -37,17 +34,12 @@
       line-height: 1.65;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+    a { text-decoration: none; color: inherit; }
 
     .container {
       width: min(1160px, 90%);
       margin: auto;
     }
-
-    /* HEADER */
 
     header {
       position: sticky;
@@ -64,8 +56,6 @@
       justify-content: space-between;
       gap: 18px;
     }
-
-    /* LOGO + CHAMPIONSHIP NAME */
 
     .brand {
       display: flex;
@@ -163,7 +153,7 @@
           rgba(9, 19, 37, .60),
           rgba(9, 19, 37, .24)
         ),
-        url('tlohome.jpg') center 45% / cover no-repeat;
+        url('images/tlohome.webp') center 45% / cover no-repeat;
     }
 
     .hero-content {
@@ -203,9 +193,7 @@
       margin: 22px 0;
     }
 
-    h1 span {
-      color: #ff6474;
-    }
+    h1 span { color: #ff6474; }
 
     .hero .date {
       font-size: 22px;
@@ -216,9 +204,7 @@
 
     /* HOME INFO CARDS */
 
-    .home-info {
-      padding: 55px 0 25px;
-    }
+    .home-info { padding: 55px 0 25px; }
 
     .home-info-grid {
       display: grid;
@@ -282,9 +268,7 @@
       transition: background .2s;
     }
 
-    .card-link:hover {
-      background: var(--red);
-    }
+    .card-link:hover { background: var(--red); }
 
     /* FOOTER */
 
@@ -367,67 +351,43 @@
         padding: 10px 0;
       }
 
-      .nav-links.open {
-        display: flex;
-      }
+      .nav-links.open { display: flex; }
 
-      .nav-links a {
-        padding: 12px;
-      }
+      .nav-links a { padding: 12px; }
 
-      .lang {
-        width: 100%;
-      }
+      .lang { width: 100%; }
     }
 
     @media (max-width: 700px) {
-      .home-info {
-        padding: 35px 0 15px;
-      }
+      .home-info { padding: 35px 0 15px; }
 
-      .home-info-grid {
-        grid-template-columns: 1fr;
-      }
+      .home-info-grid { grid-template-columns: 1fr; }
 
-      .info-card {
-        padding: 24px;
-      }
+      .info-card { padding: 24px; }
     }
 
     @media (max-width: 620px) {
-      .brand {
-        gap: 9px;
-      }
+      .brand { gap: 9px; }
 
       .brand img {
         width: 52px;
         height: 46px;
       }
 
-      .brand strong {
-        font-size: 15px;
-      }
+      .brand strong { font-size: 15px; }
 
       .brand small {
         font-size: 8px;
         letter-spacing: .5px;
       }
 
-      .hero {
-        min-height: 480px;
-      }
+      .hero { min-height: 480px; }
 
-      .hero-content {
-        padding: 55px 0;
-      }
+      .hero-content { padding: 55px 0; }
 
-      h1 {
-        letter-spacing: -1px;
-      }
+      h1 { letter-spacing: -1px; }
 
-      .footer-top {
-        flex-direction: column;
-      }
+      .footer-top { flex-direction: column; }
 
       .footer-logos {
         justify-content: center;
@@ -509,25 +469,17 @@
       </div>
     </section>
 
-    <!-- LOCALISATION AND INFORMATION -->
-
     <section class="home-info">
       <div class="container home-info-grid">
 
         <div class="info-card">
           <div class="card-icon">📍</div>
 
-          <h2 data-en="Localisation" data-pl="Lokalizacja">
-            Localisation
-          </h2>
+          <h2 data-en="Localisation" data-pl="Lokalizacja">Localisation</h2>
 
-          <p data-en="Kruszyn Airport" data-pl="Lotnisko Kruszyn">
-            Kruszyn Airport
-          </p>
+          <p data-en="Kruszyn Airport" data-pl="Lotnisko Kruszyn">Kruszyn Airport</p>
 
-          <p data-en="Włocławek, Poland" data-pl="Włocławek, Polska">
-            Włocławek, Poland
-          </p>
+          <p data-en="Włocławek, Poland" data-pl="Włocławek, Polska">Włocławek, Poland</p>
 
           <p class="card-muted"
              data-en="The venue of the World Championship for Space Models 2027."
@@ -548,20 +500,15 @@
         <div class="info-card">
           <div class="card-icon">ℹ️</div>
 
-          <h2 data-en="Information" data-pl="Informacje">
-            Information
-          </h2>
+          <h2 data-en="Information" data-pl="Informacje">Information</h2>
 
-          <p
-            data-en="Find important details about the championship, schedule and participation."
-            data-pl="Znajdź najważniejsze informacje o mistrzostwach, harmonogramie i uczestnictwie.">
+          <p data-en="Find important details about the championship, schedule and participation."
+             data-pl="Znajdź najważniejsze informacje o mistrzostwach, harmonogramie i uczestnictwie.">
             Find important details about the championship, schedule and participation.
           </p>
 
           <a href="information.html" class="card-link">
-            <span data-en="More information" data-pl="Więcej informacji">
-              More information
-            </span>
+            <span data-en="More information" data-pl="Więcej informacji">More information</span>
             <span aria-hidden="true">→</span>
           </a>
         </div>
@@ -583,9 +530,8 @@
             </div>
           </a>
 
-          <p
-            data-en="Official website of the 2027 World Championship for Space Models."
-            data-pl="Oficjalna strona Mistrzostw Świata Modeli Kosmicznych 2027.">
+          <p data-en="Official website of the 2027 World Championship for Space Models."
+             data-pl="Oficjalna strona Mistrzostw Świata Modeli Kosmicznych 2027.">
             Official website of the 2027 World Championship for Space Models.
           </p>
         </div>
@@ -605,8 +551,6 @@
           Official championship website
         </span>
       </div>
-
-      <!-- FAI AND AEROKLUB WLOCLAWSKI LOGOS -->
 
       <div class="footer-logos">
         <img src="images/logofai.png" alt="FAI logo">
