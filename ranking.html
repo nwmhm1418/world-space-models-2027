@@ -2,30 +2,29 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ranking KN – SpaceModeling.pl</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ranking KN | Modelarstwo Kosmiczne</title>
 <style>
-:root{--navy:#101d35;--red:#d92f40;--bg:#f3f5f9;--muted:#718096}*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:'DM Sans',sans-serif;color:#19263b}a{text-decoration:none;color:inherit}.container{width:min(1180px,90%);margin:auto}
-header{background:white;position:sticky;top:0;z-index:10;border-bottom:1px solid #e8edf4}.nav{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:12px}.brand img{width:55px;height:55px;object-fit:contain}.brand strong{display:block;font:800 19px Manrope;color:var(--navy)}.brand small{font-size:9px;color:var(--muted);letter-spacing:1px;font-weight:700}.nav-links{display:flex;align-items:center;gap:4px}.nav-links a{padding:10px 12px;border-radius:10px;font-size:13px;font-weight:700;color:#536176}.nav-links a:hover,.nav-links a.active{background:#f1f3f7;color:var(--red)}.lang,.menu-toggle{border:0;border-radius:10px;padding:10px 14px;font-weight:700;cursor:pointer}.lang{background:var(--navy);color:white}.menu-toggle{display:none;background:#edf1f7;font-size:20px}
-.page-hero{background:linear-gradient(110deg,#101d35,#263c5d);color:white;padding:65px 0}.page-hero small{color:#ff8995;letter-spacing:2px;font-weight:800}.page-hero h1{font:800 clamp(35px,5vw,55px) Manrope;margin:12px 0}.page-hero p{color:#c3cede;max-width:650px;line-height:1.7}
-main{padding:50px 0;min-height:55vh}.panel{background:white;border:1px solid #e5eaf1;border-radius:18px;padding:28px}.panel h2{font:800 25px Manrope;color:var(--navy);margin:0 0 10px}.panel p{color:var(--muted);font-size:14px;line-height:1.7}.ranking-placeholder{margin-top:25px;border:1px dashed #cbd4e1;border-radius:14px;padding:45px 20px;text-align:center;color:var(--muted)}.ranking-placeholder strong{display:block;color:var(--navy);font:700 18px Manrope;margin-bottom:8px}
-.table-wrap{overflow-x:auto;margin-top:25px}table{width:100%;border-collapse:collapse;background:white;border-radius:12px;overflow:hidden}th,td{text-align:left;padding:15px;border-bottom:1px solid #edf0f5;font-size:13px}th{background:var(--navy);color:white;font-weight:700}td{color:#536176}
-footer{background:#0b1528;color:white;padding:35px 0 22px}.footer-top{display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap;padding-bottom:22px}.footer-links{display:flex;gap:18px;flex-wrap:wrap}footer a{color:#b9c5d7;font-size:13px}.footer-bottom{border-top:1px solid #29364b;padding-top:18px;color:#91a0b7;font-size:12px;display:flex;justify-content:space-between;flex-wrap:wrap}.footer-logos{border-top:1px solid #29364b;margin-top:22px;padding-top:22px;display:flex;justify-content:space-between;align-items:center}.footer-logos img{height:55px;max-width:170px;object-fit:contain}
-@media(max-width:1000px){.menu-toggle{display:block}.nav{flex-wrap:wrap;padding:12px 0}.nav-links{display:none;width:100%;flex-direction:column;align-items:stretch}.nav-links.open{display:flex}.nav-links a{padding:12px}.lang{width:100%}}
-@media(max-width:650px){.panel{padding:20px}.footer-logos{justify-content:center;gap:25px;flex-wrap:wrap}}
-</style></head>
+:root{--navy:#101d35;--red:#d92f40;--light:#f3f5f8;--text:#263247}*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;color:var(--text)}header{background:var(--navy);color:white;padding:0 7%;min-height:82px;display:flex;align-items:center;justify-content:space-between}.brand{font-size:22px;font-weight:800;color:white;text-decoration:none}nav{display:flex;gap:25px}nav a{color:#e8edf5;text-decoration:none;font-size:14px;font-weight:bold}.menu{display:none;background:none;border:0;color:white;font-size:27px}.hero{background:var(--navy);color:white;padding:65px 8%}.hero small{color:#ff6572;text-transform:uppercase;letter-spacing:2px;font-weight:bold}.hero h1{font-size:48px;margin:14px 0}.hero p{color:#d5dce7;line-height:1.7}.content{padding:65px 8%;min-height:400px}.ranking{background:var(--light);padding:30px;border-left:5px solid var(--red);max-width:900px}.ranking h2{color:var(--navy);margin-top:0}.ranking p{color:#657187;line-height:1.7}.table-wrap{overflow-x:auto}table{border-collapse:collapse;width:100%;margin-top:25px;background:white}th,td{text-align:left;padding:16px;border-bottom:1px solid #e1e5eb}th{background:var(--navy);color:white}footer{background:#0b1629;color:#aeb9ca;padding:28px 8%;font-size:13px}@media(max-width:800px){header{padding:18px 6%;flex-wrap:wrap}.menu{display:block}nav{display:none;width:100%;flex-direction:column;padding:20px 0;gap:18px}nav.open{display:flex}.hero h1{font-size:38px}.content{padding:45px 6%}}
+</style>
+</head>
 <body>
-<header><div class="container nav"><a href="index.html" class="brand"><img src="images/logo.png" alt="Logo"><div><strong>SPACEMODELING.PL</strong><small>POLISH SPACE MODELING</small></div></a><button class="menu-toggle" id="menuToggle">☰</button><nav class="nav-links" id="navLinks">
-<a href="index.html" data-pl="Strona główna" data-en="Home">Strona główna</a><a href="biuletyny.html" data-pl="Biuletyny" data-en="Bulletins">Biuletyny</a><a href="zawody.html" data-pl="Zawody" data-en="Competitions">Zawody</a><a class="active" href="ranking.html" data-pl="Ranking KN" data-en="National Ranking">Ranking KN</a><a href="aktualnosci.html" data-pl="Aktualności" data-en="News">Aktualności</a><button class="lang" id="langToggle">EN</button>
-</nav></div></header>
-<section class="page-hero"><div class="container"><small>SPACEMODELING.PL / NATIONAL RANKING</small><h1 data-pl="Ranking KN" data-en="National Ranking">Ranking KN</h1><p data-pl="Klasyfikacja krajowa zawodników modelarstwa kosmicznego. Aktualne zestawienia, punkty i pozycje zawodników." data-en="National ranking of space model athletes. Current standings, points and competitor positions.">Klasyfikacja krajowa zawodników modelarstwa kosmicznego. Aktualne zestawienia, punkty i pozycje zawodników.</p></div></section>
-<main><div class="container"><div class="panel"><h2>Klasyfikacja krajowa</h2><p>Wybierz kategorię lub konkurencję, aby sprawdzić aktualne zestawienie zawodników. Tabele zostaną uzupełnione po przygotowaniu oficjalnych danych rankingowych.</p>
-<div class="ranking-placeholder"><strong>Ranking KN – dane w przygotowaniu</strong>Wkrótce opublikujemy aktualną klasyfikację krajową.</div>
-</div></div></main>
-<footer><div class="container"><div class="footer-top"><div class="brand"><img src="images/logo.png" alt=""><div><strong style="color:white">SPACEMODELING.PL</strong><small>POLISH SPACE MODELING</small></div></div><div class="footer-links"><a href="biuletyny.html">Biuletyny</a><a href="zawody.html">Zawody</a><a href="ranking.html">Ranking KN</a><a href="aktualnosci.html">Aktualności</a><a href="mistrzostwa-2027/index.html">Mistrzostwa 2027</a></div></div><div class="footer-bottom"><span>© 2027 SpaceModeling.pl</span><span>Polish Space Modeling</span></div><div class="footer-logos"><img src="images/logofai.png" alt="FAI"><img src="images/logowloclawek.png" alt="Aeroklub Włocławski"></div></div></footer>
-<script>
-const menu=document.getElementById('menuToggle'),nav=document.getElementById('navLinks'),btn=document.getElementById('langToggle');menu.onclick=()=>nav.classList.toggle('open');
-function setLang(l){document.documentElement.lang=l;document.querySelectorAll('[data-pl][data-en]').forEach(e=>e.textContent=e.getAttribute('data-'+l));btn.textContent=l==='pl'?'EN':'PL';localStorage.setItem('spacemodeling-language',l)}
-btn.onclick=()=>setLang(document.documentElement.lang==='pl'?'en':'pl');setLang(localStorage.getItem('spacemodeling-language')||'pl');
-</script></body></html>
+<header>
+<a class="brand" href="index.html">MODELARSTWO KOSMICZNE</a>
+<button class="menu" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
+<nav><a href="index.html">Strona główna</a><a href="aktualnosci.html">Aktualności</a><a href="zawody.html">Zawody</a><a href="ranking.html">Ranking KN</a><a href="biuletyny.html">Biuletyny</a></nav>
+</header>
+<div class="hero"><small>Klasyfikacja sportowa</small><h1>Ranking KN</h1><p>Klasyfikacja krajowa zawodników modelarstwa kosmicznego.</p></div>
+<main class="content">
+<div class="ranking">
+<h2>Ranking krajowy</h2>
+<p>W tym miejscu będzie publikowany aktualny ranking KN wraz z punktacją zawodników i klasyfikacją w poszczególnych konkurencjach.</p>
+<div class="table-wrap">
+<table><thead><tr><th>Pozycja</th><th>Zawodnik</th><th>Klub</th><th>Punkty</th></tr></thead>
+<tbody><tr><td colspan="4">Ranking zostanie opublikowany wkrótce.</td></tr></tbody></table>
+</div>
+</div>
+</main>
+<footer>© 2027 Modelarstwo Kosmiczne Polska</footer>
+</body>
+</html>
