@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -192,6 +193,61 @@ h2{
     font-size:14px;
 }
 
+/* DOCUMENTS */
+
+.documents{
+    background:var(--light);
+}
+
+.document-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+}
+
+.document-card{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    min-height:230px;
+    padding:32px;
+    background:white;
+    border-bottom:4px solid var(--red);
+    text-decoration:none;
+    color:var(--text);
+    transition:.25s;
+    box-shadow:0 5px 20px rgba(16,29,53,.06);
+}
+
+.document-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 12px 28px rgba(16,29,53,.12);
+}
+
+.document-icon{
+    font-size:34px;
+    margin-bottom:20px;
+}
+
+.document-card h3{
+    color:var(--navy);
+    font-size:22px;
+    margin:0 0 12px;
+}
+
+.document-card p{
+    color:#657187;
+    font-size:15px;
+    line-height:1.6;
+    margin:0 0 24px;
+}
+
+.document-link{
+    color:var(--red);
+    font-weight:700;
+    font-size:14px;
+}
+
 .champ{
     background:var(--navy);
     color:white;
@@ -252,7 +308,8 @@ footer{
         padding:55px 7%;
     }
 
-    .tiles{
+    .tiles,
+    .document-grid{
         grid-template-columns:1fr;
     }
 
@@ -283,6 +340,7 @@ footer{
         <a href="zawody.html">Zawody</a>
         <a href="ranking.html">Ranking KN</a>
         <a href="biuletyny.html">Biuletyny</a>
+        <a href="#documents">Documents</a>
     </nav>
 </header>
 
@@ -411,6 +469,61 @@ footer{
         </div>
     </section>
 
+    <!-- DOCUMENTS -->
+
+    <section class="documents" id="documents">
+
+        <div class="section-head">
+            <h2>Documents</h2>
+
+            <p>
+                Oficjalne przepisy i dokumenty dotyczące modelarstwa
+                kosmicznego oraz zasad kwalifikacji do Kadry Narodowej.
+            </p>
+        </div>
+
+        <div class="document-grid">
+
+            <a class="document-card"
+               href="dokumenty/sporting-code-S.pdf"
+               target="_blank"
+               rel="noopener noreferrer">
+
+                <div>
+                    <div class="document-icon">📄</div>
+                    <h3>FAI Sporting Code – Section 4, Volume S</h3>
+                    <p>
+                        Oficjalny kodeks sportowy FAI zawierający przepisy
+                        dotyczące konkurencji modelarstwa kosmicznego.
+                    </p>
+                </div>
+
+                <div class="document-link">Otwórz dokument →</div>
+
+            </a>
+
+            <a class="document-card"
+               href="dokumenty/przelicznie-kadry.pdf"
+               target="_blank"
+               rel="noopener noreferrer">
+
+                <div>
+                    <div class="document-icon">📄</div>
+                    <h3>System przeliczania punktów Kadry Narodowej</h3>
+                    <p>
+                        Zasady punktacji, klasyfikacji zawodników
+                        i kwalifikacji do Kadry Narodowej.
+                    </p>
+                </div>
+
+                <div class="document-link">Otwórz dokument →</div>
+
+            </a>
+
+        </div>
+
+    </section>
+
     <!-- MISTRZOSTWA ŚWIATA -->
 
     <div class="champ">
@@ -460,7 +573,7 @@ function setBackground(element, image) {
 // Pierwsze zdjęcie
 setBackground(slide1, images[0]);
 
-// Wczytanie zdjęć wcześniej, aby przejścia były płynne
+// Wczytanie zdjęć wcześniej
 images.forEach(src => {
     const img = new Image();
     img.src = src;
@@ -492,7 +605,7 @@ function changeSlide() {
     img.src = images[currentImage];
 }
 
-// Zmiana zdjęcia co 3 sekundy
+// Zmiana zdjęcia co 2,5 sekundy
 setInterval(changeSlide, 2500);
 </script>
 
