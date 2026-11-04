@@ -69,18 +69,37 @@ nav a:hover{
     cursor:pointer;
 }
 
+/* SLIDER W TLE */
+
 .hero{
     min-height:570px;
-    background:
-        linear-gradient(90deg,rgba(9,20,39,.92),rgba(9,20,39,.35)),
-        url('images/tlohome.jpg') center/cover;
+    position:relative;
+    overflow:hidden;
     display:flex;
     align-items:center;
     padding:70px 9%;
     color:white;
+    background:var(--navy);
+}
+
+.hero-bg{
+    position:absolute;
+    inset:0;
+    background-position:center;
+    background-size:cover;
+    background-repeat:no-repeat;
+    opacity:0;
+    transition:opacity 1s ease-in-out;
+    z-index:0;
+}
+
+.hero-bg.active{
+    opacity:1;
 }
 
 .hero-content{
+    position:relative;
+    z-index:2;
     max-width:720px;
 }
 
@@ -269,8 +288,15 @@ footer{
 
 <main>
 
+    <!-- GŁÓWNY BANER ZE ZDJĘCIAMI -->
+
     <div class="hero">
+
+        <div class="hero-bg active" id="slide1"></div>
+        <div class="hero-bg" id="slide2"></div>
+
         <div class="hero-content">
+
             <div class="eyebrow">Sport modelarski • Polska</div>
 
             <h1>Modelarstwo Kosmiczne</h1>
@@ -283,12 +309,16 @@ footer{
             <a class="btn" href="mistrzostwa-2027/index.html">
                 World Championship for Space Models 2027
             </a>
+
         </div>
     </div>
+
+    <!-- OPIS MODELISTWA KOSMICZNEGO -->
 
     <section>
 
         <div class="section-head">
+
             <h2>O modelarstwie kosmicznym</h2>
 
             <p>
@@ -298,6 +328,7 @@ footer{
                 sprawdzają ich osiągi, konstrukcję, czas lotu oraz
                 umiejętności pilotażu.
             </p>
+
         </div>
 
         <div class="tiles">
@@ -380,7 +411,10 @@ footer{
         </div>
     </section>
 
+    <!-- MISTRZOSTWA ŚWIATA -->
+
     <div class="champ">
+
         <div>
             <h2>Mistrzostwa Świata 2027</h2>
 
@@ -393,6 +427,7 @@ footer{
         <a class="btn" href="mistrzostwa-2027/index.html">
             World Championship for Space Models 2027
         </a>
+
     </div>
 
 </main>
@@ -400,6 +435,66 @@ footer{
 <footer>
     © 2027 Modelarstwo Kosmiczne Polska
 </footer>
+
+<!-- AUTOMATYCZNY SLIDER -->
+
+<script>
+const images = [
+    'images/1.jpg',
+    'images/2.jpg',
+    'images/3.jpg',
+    'images/4.jpg'
+];
+
+let currentImage = 0;
+let activeLayer = 1;
+
+const slide1 = document.getElementById('slide1');
+const slide2 = document.getElementById('slide2');
+
+function setBackground(element, image) {
+    element.style.backgroundImage =
+        `linear-gradient(90deg,rgba(9,20,39,.92),rgba(9,20,39,.35)), url('${image}')`;
+}
+
+// Pierwsze zdjęcie
+setBackground(slide1, images[0]);
+
+// Wczytanie zdjęć wcześniej, aby przejścia były płynne
+images.forEach(src => {
+    const img = new Image();
+    img.src = src;
+});
+
+function changeSlide() {
+
+    currentImage = (currentImage + 1) % images.length;
+
+    const nextLayer = activeLayer === 1 ? slide2 : slide1;
+    const currentLayer = activeLayer === 1 ? slide1 : slide2;
+
+    const img = new Image();
+
+    img.onload = function() {
+
+        setBackground(nextLayer, images[currentImage]);
+
+        nextLayer.classList.add('active');
+        currentLayer.classList.remove('active');
+
+        activeLayer = activeLayer === 1 ? 2 : 1;
+    };
+
+    img.onerror = function() {
+        console.error('Nie udało się wczytać zdjęcia:', images[currentImage]);
+    };
+
+    img.src = images[currentImage];
+}
+
+// Zmiana zdjęcia co 3 sekundy
+setInterval(changeSlide, 3000);
+</script>
 
 </body>
 </html>
