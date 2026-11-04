@@ -1,68 +1,405 @@
-
 <!DOCTYPE html>
 <html lang="pl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Modelarstwo Kosmiczne</title>
+
 <style>
-:root{--navy:#101d35;--navy2:#1d3150;--red:#d92f40;--light:#f3f5f8;--text:#263247}
-*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--text);background:#fff}
-header{background:var(--navy);color:white;padding:0 7%;display:flex;align-items:center;justify-content:space-between;min-height:82px}
-.brand{font-size:23px;font-weight:800;letter-spacing:.5px;color:white;text-decoration:none}
-nav{display:flex;gap:27px;align-items:center}nav a{color:#e8edf5;text-decoration:none;font-size:14px;font-weight:600}nav a:hover{color:#fff}
-.menu{display:none;background:none;border:0;color:white;font-size:27px}
-.hero{min-height:570px;background:linear-gradient(90deg,rgba(9,20,39,.92),rgba(9,20,39,.35)),url('images/tlohome.jpg') center/cover;display:flex;align-items:center;padding:70px 9%;color:white}
-.hero-content{max-width:720px}.eyebrow{color:#ff6572;font-weight:700;text-transform:uppercase;letter-spacing:2px;font-size:13px}
-h1{font-size:clamp(38px,6vw,65px);line-height:1.08;margin:18px 0}.hero p{font-size:18px;line-height:1.7;color:#e1e7ef;max-width:620px}
-.btn{display:inline-block;background:var(--red);color:white;padding:16px 23px;text-decoration:none;font-weight:700;border-radius:4px;margin-top:18px}.btn:hover{background:#bd2434}
-section{padding:75px 8%}.section-head{max-width:750px;margin-bottom:35px}h2{font-size:32px;color:var(--navy);margin:0 0 14px}.section-head p{line-height:1.7;color:#657187}
-.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.tile{padding:28px;background:var(--light);border-bottom:4px solid var(--red);text-decoration:none;color:var(--text);transition:.2s}.tile:hover{transform:translateY(-4px)}.tile h3{color:var(--navy);margin:0 0 12px}.tile p{line-height:1.6;margin:0;color:#657187}
-.champ{background:var(--navy);color:white;padding:55px 8%;display:flex;justify-content:space-between;align-items:center;gap:25px}.champ h2{color:white}.champ p{color:#d5dce7;line-height:1.6}
-footer{background:#0b1629;color:#aeb9ca;padding:28px 8%;font-size:13px}
-@media(max-width:800px){header{padding:18px 6%;flex-wrap:wrap}.menu{display:block}nav{display:none;width:100%;flex-direction:column;align-items:flex-start;padding:20px 0 5px;gap:18px}nav.open{display:flex}.hero{min-height:500px;padding:55px 7%}.tiles{grid-template-columns:1fr}.champ{align-items:flex-start;flex-direction:column}section{padding:55px 7%}}
+:root{
+    --navy:#101d35;
+    --navy2:#1d3150;
+    --red:#d92f40;
+    --light:#f3f5f8;
+    --text:#263247;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    color:var(--text);
+    background:#fff;
+}
+
+header{
+    background:var(--navy);
+    color:white;
+    padding:0 7%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    min-height:82px;
+}
+
+.brand{
+    font-size:23px;
+    font-weight:800;
+    letter-spacing:.5px;
+    color:white;
+    text-decoration:none;
+}
+
+nav{
+    display:flex;
+    gap:27px;
+    align-items:center;
+}
+
+nav a{
+    color:#e8edf5;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:600;
+}
+
+nav a:hover{
+    color:#fff;
+}
+
+.menu{
+    display:none;
+    background:none;
+    border:0;
+    color:white;
+    font-size:27px;
+    cursor:pointer;
+}
+
+.hero{
+    min-height:570px;
+    background:
+        linear-gradient(90deg,rgba(9,20,39,.92),rgba(9,20,39,.35)),
+        url('images/tlohome.jpg') center/cover;
+    display:flex;
+    align-items:center;
+    padding:70px 9%;
+    color:white;
+}
+
+.hero-content{
+    max-width:720px;
+}
+
+.eyebrow{
+    color:#ff6572;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-size:13px;
+}
+
+h1{
+    font-size:clamp(38px,6vw,65px);
+    line-height:1.08;
+    margin:18px 0;
+}
+
+.hero p{
+    font-size:18px;
+    line-height:1.7;
+    color:#e1e7ef;
+    max-width:620px;
+}
+
+.btn{
+    display:inline-block;
+    background:var(--red);
+    color:white;
+    padding:16px 23px;
+    text-decoration:none;
+    font-weight:700;
+    border-radius:4px;
+    margin-top:18px;
+}
+
+.btn:hover{
+    background:#bd2434;
+}
+
+section{
+    padding:75px 8%;
+}
+
+.section-head{
+    max-width:850px;
+    margin-bottom:35px;
+}
+
+h2{
+    font-size:32px;
+    color:var(--navy);
+    margin:0 0 14px;
+}
+
+.section-head p{
+    line-height:1.7;
+    color:#657187;
+    font-size:16px;
+}
+
+.tiles{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.tile{
+    padding:28px;
+    background:var(--light);
+    border-bottom:4px solid var(--red);
+    text-decoration:none;
+    color:var(--text);
+    transition:.2s;
+}
+
+.tile:hover{
+    transform:translateY(-4px);
+}
+
+.tile h3{
+    color:var(--navy);
+    margin:0 0 12px;
+    font-size:19px;
+}
+
+.tile p{
+    line-height:1.6;
+    margin:0;
+    color:#657187;
+    font-size:14px;
+}
+
+.champ{
+    background:var(--navy);
+    color:white;
+    padding:55px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:25px;
+}
+
+.champ h2{
+    color:white;
+}
+
+.champ p{
+    color:#d5dce7;
+    line-height:1.6;
+}
+
+footer{
+    background:#0b1629;
+    color:#aeb9ca;
+    padding:28px 8%;
+    font-size:13px;
+}
+
+@media(max-width:1000px){
+    .tiles{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:800px){
+    header{
+        padding:18px 6%;
+        flex-wrap:wrap;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    nav{
+        display:none;
+        width:100%;
+        flex-direction:column;
+        align-items:flex-start;
+        padding:20px 0 5px;
+        gap:18px;
+    }
+
+    nav.open{
+        display:flex;
+    }
+
+    .hero{
+        min-height:500px;
+        padding:55px 7%;
+    }
+
+    .tiles{
+        grid-template-columns:1fr;
+    }
+
+    .champ{
+        align-items:flex-start;
+        flex-direction:column;
+    }
+
+    section{
+        padding:55px 7%;
+    }
+}
 </style>
 </head>
+
 <body>
+
 <header>
-<a class="brand" href="index.html">MODELARSTWO KOSMICZNE</a>
-<button class="menu" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
-<nav>
-<a href="index.html">Strona główna</a>
-<a href="aktualnosci.html">Aktualności</a>
-<a href="zawody.html">Zawody</a>
-<a href="ranking.html">Ranking KN</a>
-<a href="biuletyny.html">Biuletyny</a>
-</nav>
+    <a class="brand" href="index.html">MODELARSTWO KOSMICZNE</a>
+
+    <button class="menu" onclick="document.querySelector('nav').classList.toggle('open')">
+        ☰
+    </button>
+
+    <nav>
+        <a href="index.html">Strona główna</a>
+        <a href="aktualnosci.html">Aktualności</a>
+        <a href="zawody.html">Zawody</a>
+        <a href="ranking.html">Ranking KN</a>
+        <a href="biuletyny.html">Biuletyny</a>
+    </nav>
 </header>
 
 <main>
-<div class="hero">
-<div class="hero-content">
-<div class="eyebrow">Sport modelarski • Polska</div>
-<h1>Modelarstwo Kosmiczne</h1>
-<p>Aktualności, zawody, biuletyny i informacje ze świata modelarstwa kosmicznego. Wszystko w jednym miejscu.</p>
-<a class="btn" href="mistrzostwa-2027/index.html">World Championship for Space Models 2027</a>
-</div>
-</div>
 
-<section>
-<div class="section-head">
-<h2>O modelarstwie kosmicznym</h2>
-<p>Modelarstwo kosmiczne łączy wiedzę techniczną, precyzję wykonania, kreatywność i rywalizację sportową. Zawodnicy projektują, budują i prezentują modele rakiet.</p>
-</div>
-<div class="tiles">
-<a class="tile" href="aktualnosci.html"><h3>Aktualności</h3><p>Najnowsze informacje z zawodów i wydarzeń modelarskich.</p></a>
-<a class="tile" href="zawody.html"><h3>Kalendarz zawodów</h3><p>Terminy zawodów krajowych i międzynarodowych.</p></a>
-<a class="tile" href="ranking.html"><h3>Ranking KN</h3><p>Klasyfikacja krajowa zawodników modelarstwa kosmicznego.</p></a>
-</div>
-</section>
+    <div class="hero">
+        <div class="hero-content">
+            <div class="eyebrow">Sport modelarski • Polska</div>
 
-<div class="champ">
-<div><h2>Mistrzostwa Świata 2027</h2><p>Oficjalna strona Mistrzostw Świata Modeli Kosmicznych 2027 we Włocławku.</p></div>
-<a class="btn" href="mistrzostwa-2027/index.html">World Championship for Space Models 2027</a>
-</div>
+            <h1>Modelarstwo Kosmiczne</h1>
+
+            <p>
+                Aktualności, zawody, biuletyny i informacje ze świata
+                modelarstwa kosmicznego. Wszystko w jednym miejscu.
+            </p>
+
+            <a class="btn" href="mistrzostwa-2027/index.html">
+                World Championship for Space Models 2027
+            </a>
+        </div>
+    </div>
+
+    <section>
+
+        <div class="section-head">
+            <h2>O modelarstwie kosmicznym</h2>
+
+            <p>
+                Modelarstwo kosmiczne to dyscyplina sportu modelarskiego,
+                w której zawodnicy rywalizują w różnych konkurencjach
+                z wykorzystaniem modeli rakiet. Poszczególne kategorie
+                sprawdzają ich osiągi, konstrukcję, czas lotu oraz
+                umiejętności pilotażu.
+            </p>
+        </div>
+
+        <div class="tiles">
+
+            <div class="tile">
+                <h3>S1 – Lot wysokościowy</h3>
+                <p>
+                    Konkurencja polega na osiągnięciu przez model rakiety
+                    jak największej wysokości. O wyniku decyduje najwyższa
+                    zmierzona lub obliczona wysokość lotu.
+                </p>
+            </div>
+
+            <div class="tile">
+                <h3>S3 – Czas lotu ze spadochronem</h3>
+                <p>
+                    Modele jednostopniowe, napędzane jednym silnikiem
+                    rakietowym, wyposażone są w jeden lub więcej
+                    spadochronów. Celem jest uzyskanie jak najdłuższego
+                    czasu lotu.
+                </p>
+            </div>
+
+            <div class="tile">
+                <h3>S4 – Czas lotu rakietoplanu</h3>
+                <p>
+                    Model wznosi się przy użyciu silnika rakietowego,
+                    a następnie wraca na ziemię w stabilnym locie szybowym,
+                    wykorzystując powierzchnie aerodynamiczne.
+                </p>
+            </div>
+
+            <div class="tile">
+                <h3>S5 – Wysokościowe modele rakiet makiet</h3>
+                <p>
+                    Konkurencja łączy lot wysokościowy z oceną makiety.
+                    Do punktów za jakość wykonania i zgodność z oryginałem
+                    dodawana jest osiągnięta wysokość lotu.
+                </p>
+            </div>
+
+            <div class="tile">
+                <h3>S6 – Czas lotu z taśmą</h3>
+                <p>
+                    Modele jednostopniowe wyposażone są w taśmę hamującą
+                    służącą do opadania. Celem jest uzyskanie jak
+                    najdłuższego czasu lotu.
+                </p>
+            </div>
+
+            <div class="tile">
+                <h3>S7 – Makiety rakiet</h3>
+                <p>
+                    Modele odwzorowują istniejące lub historyczne rakiety,
+                    pociski kierowane albo pojazdy kosmiczne. Oceniane są
+                    między innymi zgodność z oryginałem, jakość wykonania,
+                    stopień trudności i charakterystyka lotu.
+                </p>
+            </div>
+
+            <div class="tile">
+                <h3>S8 – Czas lotu rakietoplanu zdalnie sterowanego</h3>
+                <p>
+                    Jednostopniowy model o sztywnych skrzydłach startuje
+                    pionowo lub prawie pionowo z napędem rakietowym,
+                    a następnie wraca w stabilnym locie szybowym.
+                    Oceniany jest czas lotu i lądowanie w wyznaczonej strefie.
+                </p>
+            </div>
+
+            <div class="tile">
+                <h3>S9 – Czas lotu wiropłatu</h3>
+                <p>
+                    Model wykorzystuje autorotację jako sposób opadania.
+                    Wirujące powierzchnie spowalniają jego powrót na ziemię.
+                    Celem jest uzyskanie jak najdłuższego czasu lotu.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="champ">
+        <div>
+            <h2>Mistrzostwa Świata 2027</h2>
+
+            <p>
+                Oficjalna strona Mistrzostw Świata Modeli Kosmicznych
+                2027 we Włocławku.
+            </p>
+        </div>
+
+        <a class="btn" href="mistrzostwa-2027/index.html">
+            World Championship for Space Models 2027
+        </a>
+    </div>
+
 </main>
-<footer>© 2027 Modelarstwo Kosmiczne Polska</footer>
+
+<footer>
+    © 2027 Modelarstwo Kosmiczne Polska
+</footer>
+
 </body>
 </html>
