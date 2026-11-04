@@ -2,23 +2,219 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Zawody | Modelarstwo Kosmiczne</title>
+
 <style>
-:root{--navy:#101d35;--red:#d92f40;--light:#f3f5f8;--text:#263247}*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;color:var(--text)}header{background:var(--navy);color:white;padding:0 7%;min-height:82px;display:flex;align-items:center;justify-content:space-between}.brand{font-size:22px;font-weight:800;color:white;text-decoration:none}nav{display:flex;gap:25px}nav a{color:#e8edf5;text-decoration:none;font-size:14px;font-weight:bold}.menu{display:none;background:none;border:0;color:white;font-size:27px}.hero{background:var(--navy);color:white;padding:65px 8%}.hero small{color:#ff6572;text-transform:uppercase;letter-spacing:2px;font-weight:bold}.hero h1{font-size:48px;margin:14px 0}.hero p{color:#d5dce7;line-height:1.7}.content{padding:65px 8%;min-height:400px}.event{display:flex;gap:25px;align-items:center;padding:25px 0;border-bottom:1px solid #e1e5eb}.date{background:var(--navy);color:white;padding:18px 20px;min-width:125px;text-align:center;font-weight:bold}.event h2{color:var(--navy);font-size:21px;margin:0 0 8px}.event p{margin:0;color:#657187;line-height:1.6}.status{color:var(--red);font-size:12px;font-weight:bold;text-transform:uppercase}footer{background:#0b1629;color:#aeb9ca;padding:28px 8%;font-size:13px}@media(max-width:800px){header{padding:18px 6%;flex-wrap:wrap}.menu{display:block}nav{display:none;width:100%;flex-direction:column;padding:20px 0;gap:18px}nav.open{display:flex}.hero h1{font-size:38px}.content{padding:45px 6%}.event{align-items:flex-start;flex-direction:column}}
+:root{
+    --navy:#101d35;
+    --red:#d92f40;
+    --light:#f3f5f8;
+    --text:#263247;
+}
+
+*{box-sizing:border-box}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    color:var(--text);
+}
+
+header{
+    background:var(--navy);
+    color:white;
+    padding:0 7%;
+    min-height:82px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.brand{
+    font-size:22px;
+    font-weight:800;
+    color:white;
+    text-decoration:none;
+}
+
+nav{
+    display:flex;
+    gap:25px;
+}
+
+nav a{
+    color:#e8edf5;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:bold;
+}
+
+nav a:hover{color:white}
+
+.menu{
+    display:none;
+    background:none;
+    border:0;
+    color:white;
+    font-size:27px;
+    cursor:pointer;
+}
+
+.hero{
+    background:var(--navy);
+    color:white;
+    padding:65px 8%;
+}
+
+.hero small{
+    color:#ff6572;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-weight:bold;
+}
+
+.hero h1{
+    font-size:48px;
+    margin:14px 0;
+}
+
+.hero p{
+    color:#d5dce7;
+    line-height:1.7;
+}
+
+.content{
+    padding:65px 8%;
+    min-height:400px;
+}
+
+.event{
+    display:flex;
+    gap:25px;
+    align-items:center;
+    padding:25px 0;
+    border-bottom:1px solid #e1e5eb;
+}
+
+.date{
+    background:var(--navy);
+    color:white;
+    padding:18px 20px;
+    min-width:125px;
+    text-align:center;
+    font-weight:bold;
+}
+
+.event h2{
+    color:var(--navy);
+    font-size:21px;
+    margin:0 0 8px;
+}
+
+.event p{
+    margin:0;
+    color:#657187;
+    line-height:1.6;
+}
+
+.status{
+    color:var(--red);
+    font-size:12px;
+    font-weight:bold;
+    text-transform:uppercase;
+}
+
+footer{
+    background:#0b1629;
+    color:#aeb9ca;
+    padding:28px 8%;
+    font-size:13px;
+}
+
+@media(max-width:800px){
+    header{
+        padding:18px 6%;
+        flex-wrap:wrap;
+    }
+
+    .menu{display:block}
+
+    nav{
+        display:none;
+        width:100%;
+        flex-direction:column;
+        padding:20px 0;
+        gap:18px;
+    }
+
+    nav.open{display:flex}
+
+    .hero h1{font-size:38px}
+
+    .content{padding:45px 6%}
+
+    .event{
+        align-items:flex-start;
+        flex-direction:column;
+    }
+}
 </style>
 </head>
+
 <body>
+
 <header>
+
 <a class="brand" href="index.html">MODELARSTWO KOSMICZNE</a>
-<button class="menu" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
-<nav><a href="index.html">Strona główna</a><a href="aktualnosci.html">Aktualności</a><a href="zawody.html">Zawody</a><a href="ranking.html">Ranking KN</a><a href="biuletyny.html">Biuletyny</a></nav>
+
+<button class="menu" onclick="document.querySelector('nav').classList.toggle('open')">
+☰
+</button>
+
+<nav>
+    <a href="index.html">Strona główna</a>
+    <a href="aktualnosci.html">Aktualności</a>
+    <a href="zawody.html">Zawody</a>
+    <a href="ranking.html">Ranking KN</a>
+    <a href="biuletyny.html">Biuletyny</a>
+    <a href="index.html#documents">Documents</a>
+</nav>
+
 </header>
-<div class="hero"><small>Sezon sportowy</small><h1>Kalendarz zawodów</h1><p>Terminy zawodów modelarstwa kosmicznego w Polsce i za granicą.</p></div>
+
+<div class="hero">
+    <small>Sezon sportowy</small>
+    <h1>Kalendarz zawodów</h1>
+    <p>Terminy zawodów modelarstwa kosmicznego w Polsce i za granicą.</p>
+</div>
+
 <main class="content">
-<div class="event"><div class="date">2027</div><div><span class="status">Wkrótce</span><h2>Zawody krajowe</h2><p>Terminy i lokalizacje zawodów krajowych zostaną uzupełnione.</p></div></div>
-<div class="event"><div class="date">2027</div><div><span class="status">Wkrótce</span><h2>Zawody międzynarodowe</h2><p>Informacje o zawodach międzynarodowych zostaną opublikowane po zatwierdzeniu kalendarza.</p></div></div>
+
+    <div class="event">
+        <div class="date">2027</div>
+        <div>
+            <span class="status">Wkrótce</span>
+            <h2>Zawody krajowe</h2>
+            <p>Terminy i lokalizacje zawodów krajowych zostaną uzupełnione.</p>
+        </div>
+    </div>
+
+    <div class="event">
+        <div class="date">2027</div>
+        <div>
+            <span class="status">Wkrótce</span>
+            <h2>Zawody międzynarodowe</h2>
+            <p>Informacje o zawodach międzynarodowych zostaną opublikowane po zatwierdzeniu kalendarza.</p>
+        </div>
+    </div>
+
 </main>
-<footer>© 2027 Modelarstwo Kosmiczne Polska</footer>
+
+<footer>
+    © 2027 Modelarstwo Kosmiczne Polska
+</footer>
+
 </body>
 </html>
